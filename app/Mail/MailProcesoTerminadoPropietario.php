@@ -32,7 +32,7 @@ class MailProcesoTerminadoPropietario extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mail-invitacion-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Homie - Proceso terminado')
+        return $this->view('mails.mail-proceso-terminado-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Homie - Proceso terminado')
             ->subject('El propietario que invitaste ha terminado su proceso');
     }
 }
