@@ -1,0 +1,229 @@
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+.ft-md {
+    font-size: 1.3rem;
+}
+
+.text-primary {
+    color: var(--primario) !important;
+}
+
+.text-secundary {
+    color: var(--secundario) !important;
+}
+
+.text-orange {
+    color: var(--naranja) !important;
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: auto;
+}
+
+.bg-primary {
+    background: var(--primario) !important;
+}
+
+.section {
+    padding: 6rem 0rem;
+}
+
+main section:first-child {
+    padding: 4rem 0rem 6rem 0rem;
+}
+main section:last-child {
+    padding: 6rem 0rem 4rem 0rem;
+}
+
+main .section-registro {
+    padding: 2rem 0rem 2rem 0rem !important;
+}
+
+.btn-yellow {
+    background: var(--secundario);
+    color: var(--blanco);
+    font-size: 1rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+.btn-yellow-sm {
+    background: var(--secundario);
+    color: var(--blanco);
+    font-size: 1.1rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+.btn-yellow-lg {
+    background: var(--secundario);
+    color: var(--blanco);
+    font-size: 1.3rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+.btn-orange {
+    background: var(--naranja);
+    color: var(--blanco);
+    font-size: 1.3rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+.btn-orange-sm {
+    background: var(--naranja);
+    color: var(--blanco);
+    font-size: 1.1rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+.btn-morado {
+    background: var(--primario);
+    color: var(--blanco);
+    font-size: 1.3rem !important;
+    padding: 0.6rem 2.5rem;
+    border-radius: 30px;
+}
+
+.btn-yellow:hover,
+.btn-orange:hover,
+.btn-orange-sm:hover,
+.btn-yellow-sm:hover,
+.btn-yellow-lg:hover,
+.btn-morado:hover {
+    color: var(--blanco);
+}
+
+.btn-yellow:focus,
+.btn-orange:focus,
+.btn-orange-sm:focus,
+.btn-yellow-sm:focus,
+.btn-yellow-lg:focus,
+.btn-morado:focus {
+    color: var(--blanco);
+}
+
+.btn-yellow::selection,
+.btn-orange::selection,
+.btn-orange-sm::selection,
+.btn-yellow-sm::selection,
+.btn-yellow-lg::selection,
+.btn-morado::selection {
+    color: var(--blanco);
+}
+
+.bg-gris {
+    background: var(--bg-gris);
+}
+.min-vh100 {
+    min-height: 100vh;
+}
+@media (min-width: 1200px) {
+    .ocultar-pc {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .ocultar-md {
+        display: none !important;
+    }
+}
+
+.card {
+    box-shadow: var(--sombra);
+    border: 0px;
+}
+
+.pt-6 {
+    padding-top: 6rem;
+}
+@media (max-width: 991px) {
+    .pt-6 {
+        padding-top: 4rem;
+    }
+}
+@media (max-width: 991px) {
+    .text-center-md {
+        text-align: center;
+    }
+}
+
+/* Animaciones */
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name: parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes parpadeo {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes parpadeo {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

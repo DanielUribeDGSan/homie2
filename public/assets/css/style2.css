@@ -1,0 +1,156 @@
+/* Header */
+.header-height-1 {
+    min-height: auto;
+}
+
+.main-menu > nav > ul > li > a {
+    color: var(--primario);
+    font-weight: 500;
+    line-height: 120px;
+    display: inline-block;
+    position: relative;
+}
+
+.logo a img,
+.footer-about .footer-logo a img {
+    max-width: 100%;
+    width: 11vw;
+}
+
+@media (max-width: 991px) {
+    .logo a img,
+    .footer-about .footer-logo a img {
+        width: 22vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo a img,
+    .footer-about .footer-logo a img {
+        width: 35vw;
+    }
+}
+
+.icon-menu {
+    color: var(--primario);
+    padding-right: 1rem;
+}
+
+@media (max-width: 991px) {
+    .icon-menu {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 767px) {
+    .icon-menu {
+        font-size: 2rem;
+    }
+}
+/* Inicio */
+.home__circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--naranja);
+}
+@media (max-width: 767px) {
+    .home__circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--naranja);
+    }
+}
+
+.home__card {
+    border-radius: 2rem;
+    min-height: 20rem;
+}
+@media (max-width: 767px) {
+    .home__card {
+        min-height: 17rem;
+    }
+}
+
+.home__img-card {
+    width: 6vw;
+}
+@media (max-width: 991px) {
+    .home__img-card {
+        width: 12vw;
+    }
+}
+@media (max-width: 767px) {
+    .home__img-card {
+        width: 15vw;
+    }
+}
+
+.home__img-broker {
+    height: 28rem;
+}
+@media (max-width: 991px) {
+    .home__img-broker {
+        height: 45vh;
+    }
+}
+@media (max-width: 767px) {
+    .home__img-broker {
+        height: 100vh;
+    }
+}
+.line-form {
+    height: 100%;
+    color: transparent;
+    border-right: 1px solid var(--text-color);
+}
+@media (max-width: 991px) {
+    .home__img-beneficios-brokers {
+        width: 30vw;
+    }
+}
+
+.footer__espacio-text {
+    margin-top: 1rem;
+}
+
+/* Registro */
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: var(--blanco);
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.7rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (max-width: 991px) {
+    .form-input {
+        width: 100%;
+    }
+}
+.registro__img {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 991px) {
+    .registro__img {
+        height: 35vh;
+    }
+}
+
+select {
+    background: url("../images/svg/arrow.svg") no-repeat right;
+    background-size: 10% 25%;
+}
+
+/* File */

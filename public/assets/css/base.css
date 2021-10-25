@@ -1,0 +1,207 @@
+@font-face {
+    src: url("../fonts/MabryPro.otf");
+    font-family: primaryRegular;
+}
+
+@font-face {
+    src: url("../fonts/MabryBold.otf");
+    font-family: primaryBold;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+* {
+    font-family: "primaryRegular", sans-serif;
+    margin: 0px;
+}
+
+html,
+body {
+    height: auto;
+    font-family: "primaryRegular", sans-serif;
+    background: var(--blanco);
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "primaryRegular", sans-serif !important;
+    color: var(--text-color);
+    margin: 0px;
+    font-weight: 600;
+}
+
+p,
+button,
+span,
+a,
+input {
+    font-family: "primaryRegular", sans-serif !important;
+    color: var(--text-color);
+    margin: 0px;
+}
+p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    line-height: 32px;
+}
+.dropdown p {
+    font-size: 1rem;
+}
+
+h1,
+.h1 {
+    font-size: 2.1rem;
+}
+@media (max-width: 767px) {
+    h1,
+    .h1 {
+        font-size: 1.8rem;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+@media (max-width: 767px) {
+    h2,
+    .h2 {
+        font-size: 1.7rem;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+}
+@media (max-width: 767px) {
+    h3,
+    .h3 {
+        font-size: 1.6rem;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 1.5rem;
+}
+@media (max-width: 767px) {
+    h4,
+    .h4 {
+        font-size: 1.4rem;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+@media (max-width: 767px) {
+    h5,
+    .h5 {
+        font-size: 1.1rem;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 1.25rem;
+}
+@media (max-width: 767px) {
+    h6,
+    .h6 {
+        font-size: 1rem;
+    }
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+button,
+img,
+input,
+span {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+*:focus {
+    outline: none;
+}
+
+a:focus {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+@media (max-width: 991px) {
+    .img-fluid {
+        width: 100%;
+    }
+}
+
+/* Alerta */
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25em;
+    background: initial;
+    background-color: var(--naranja) !important;
+    color: #fff;
+    font-size: 1em;
+}

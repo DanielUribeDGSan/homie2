@@ -1,0 +1,18 @@
+:root {
+    scroll-behavior: unset;
+    --primario: #625d9c;
+    --secundario: #f5b335;
+    --naranja: #df6b2e;
+
+    --text-color: #000;
+    --text-color-gris: #c5c4c2;
+
+    --blanco: #fff;
+    --negro: #000;
+
+    --input: #ededed;
+
+    --bg-gris: #f2f2f2;
+
+    --sombra: 0 8px 20px 0 rgb(0 0 0 / 10%);
+}
