@@ -119,11 +119,11 @@ class DatosPersonales extends Component
                 'fase' => 1,
             ]
         );
-        Mail::to(Auth::user()->email)->send(new MailInvitacionPropietario($user, $inquilino, $this->createForm['email']));
+        Mail::to($this->createForm['email'])->send(new MailInvitacionPropietario($user, $inquilino, $this->createForm['email']));
 
         Mail::to($this->createForm2['email'])->send(new MailInvitacionInquilino($user, $inquilino, $this->createForm2['email']));
 
-        Mail::to($this->createForm['email'])->send(new MailProcesoTerminado($inquilino));
+        Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($inquilino));
 
         return redirect()->route('registro_completado');
     }
