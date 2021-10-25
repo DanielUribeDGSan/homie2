@@ -123,7 +123,7 @@ class Roomies extends Component
                 'fase' => 4,
             ]
         );
-        Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
+        // Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
 
         // $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
         // if (!is_null($user_invitacion)) {
