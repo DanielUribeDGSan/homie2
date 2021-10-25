@@ -125,15 +125,15 @@ class Roomies extends Component
         );
         Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
 
-        $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
-        if (!is_null($user_invitacion)) {
-            if ($user_invitacion->hasRole('broker')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoInquilino($user_invitacion, Auth::user()->name, Auth::user()->last_name));
-            }
-            if ($user_invitacion->hasRole('propietario')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoInquilino($user_invitacion, Auth::user()->name, Auth::user()->last_name));
-            }
-        }
+        // $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
+        // if (!is_null($user_invitacion)) {
+        //     if ($user_invitacion->hasRole('broker')) {
+        //         Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoInquilino($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+        //     }
+        //     if ($user_invitacion->hasRole('propietario')) {
+        //         Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoInquilino($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+        //     }
+        // }
 
         return redirect()->route('registro_completado');
     }

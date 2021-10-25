@@ -139,17 +139,17 @@ class DatosPersonales extends Component
                 'fase' => 2,
             ]
         );
-        Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
+        // Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
 
-        $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
-        if (!is_null($user_invitacion)) {
-            if ($user_invitacion->hasRole('broker')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
-            }
-            if ($user_invitacion->hasRole('arendatario')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
-            }
-        }
+        // $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
+        // if (!is_null($user_invitacion)) {
+        //     if ($user_invitacion->hasRole('broker')) {
+        //         Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+        //     }
+        //     if ($user_invitacion->hasRole('arendatario')) {
+        //         Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+        //     }
+        // }
         return redirect()->route('registro_completado');
     }
 
