@@ -17,6 +17,8 @@ class MailProcesoTerminadoPropietario extends Mailable
      *
      * @return void
      */
+    public  $user, $name, $last_name;
+
     public function __construct(User $user, $name, $last_name)
     {
         $this->user = $user;
