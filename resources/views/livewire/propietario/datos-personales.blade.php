@@ -1,10 +1,15 @@
-<div x-data class="mt-3">
+<div x-data class="mt-3" wire:ignore>
     <form onsubmit="return datosPersonales(event)">
-        <div class="form-group row" wire:ignore>
+        <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="escrituras" class="col-form-label fw-100">Primeras 5 hojas de las escrituras</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="escrituras"
+                <label class="col-form-label fw-100">Primeras 5 hojas de las escrituras</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="escrituras"
                     wire:model.defer="escrituras">
+                <label for="escrituras" class="form-input-file text-center" id="file_escrituras"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('escrituras'))
                     <span>{{ $errors->first('escrituras') }}</span>
                 @endif
@@ -147,9 +152,8 @@
         </div>
         <div class="form-group row">
             <div class="col-6 mt-5">
-                <button type="submit" class="btn btn-orange-sm" wire:loading.attr="disabled"
-                    wire:loading.remove>Registrar datos</button>
-                <div wire:loading wire:loading.class="d-flex align-items-center">
+                <button type="submit" class="btn btn-orange-sm loading-btn">Registrar datos</button>
+                <div class="loading d-none">
                     <x-loading />
                 </div>
             </div>
@@ -160,7 +164,7 @@
             </div>
         </div>
     </form>
-    <script wire:ignore>
+    <script>
         const datosPersonales = (e) => {
             e.preventDefault();
 

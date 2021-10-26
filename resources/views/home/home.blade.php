@@ -213,7 +213,7 @@
                     incidencia</p>
             </article>
             <div class="row pt-6">
-                <div class="col-lg-3 col-md-6 col-6 mt-lg-0 mt-md-4 mt-4">
+                <div class="col-lg-3 col-md-6 col-12 mt-lg-0 mt-md-4 mt-4">
                     <div class="card home__card">
                         <div class="card-body d-flex align-items-center justify-content-center">
                             <div class="h-auto">
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mt-lg-0 mt-md-4 mt-4">
+                <div class="col-lg-3 col-md-6 col-12 mt-lg-0 mt-md-4 mt-4">
                     <div class="card home__card">
                         <div class="card-body d-flex align-items-center justify-content-center">
                             <div class="h-auto">
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mt-lg-0 mt-md-4 mt-4">
+                <div class="col-lg-3 col-md-6 col-12 mt-lg-0 mt-md-4 mt-4">
                     <div class="card home__card">
                         <div class="card-body d-flex align-items-center justify-content-center">
                             <div class="h-auto">
@@ -270,7 +270,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mt-lg-0 mt-md-4 mt-4">
+                <div class="col-lg-3 col-md-6 col-12 mt-lg-0 mt-md-4 mt-4">
                     <div class="card home__card">
                         <div class="card-body d-flex align-items-center justify-content-center">
                             <div class="h-auto">
