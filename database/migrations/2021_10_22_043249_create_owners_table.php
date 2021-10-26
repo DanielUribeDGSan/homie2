@@ -18,11 +18,12 @@ class CreateOwnersTable extends Migration
             $table->string('transaction');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('escrituras');
-            $table->string('contrato_compra_venta');
-            $table->string('poder_notarial');
-            $table->string('comprobante_domicilio');
+            $table->string('escrituras')->nullable();
+            $table->string('contrato_compra_venta')->nullable();
+            $table->string('poder_notarial')->nullable();
+            $table->string('comprobante_domicilio')->nullable();
             $table->string('admite_mascotas');
+            $table->string('cantidad_mascotas')->nullable();
             $table->string('tiene_estacionamiento');
             $table->string('servicios');
             $table->string('esta_amueblado');

@@ -15,25 +15,40 @@
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="contrato_compraventa" class="col-form-label fw-100"> Contrato de compra-venta</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="contrato_compraventa"
+                <label class="col-form-label fw-100"> Contrato de compra-venta</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="contrato_compraventa"
                     wire:model.defer="contrato_compraventa">
+                <label for="contrato_compraventa" class="form-input-file text-center" id="file_contrato_compraventa"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('contrato_compraventa'))
                     <span>{{ $errors->first('contrato_compraventa') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="poder_notarial" class="col-form-label fw-100"> Poder notarial</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="poder_notarial"
+                <label class="col-form-label fw-100"> Poder notarial</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="poder_notarial"
                     wire:model.defer="poder_notarial">
+                <label for="poder_notarial" class="form-input-file text-center" id="file_poder_notarial"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('poder_notarial'))
                     <span>{{ $errors->first('poder_notarial') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="comprobante_domicilio" class="col-form-label fw-100"> Comprobante de domicilio</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="comprobante_domicilio"
+                <label class="col-form-label fw-100"> Comprobante de domicilio</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_domicilio"
                     wire:model.defer="comprobante_domicilio">
+                <label for="comprobante_domicilio" class="form-input-file text-center"
+                    id="file_comprobante_domicilio"><i class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('comprobante_domicilio'))
                     <span>{{ $errors->first('comprobante_domicilio') }}</span>
                 @endif
@@ -98,9 +113,14 @@
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="identificacion_oficial" class="col-form-label fw-100"> Identificación oficial</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="identificacion_oficial"
+                <label class="col-form-label fw-100"> Identificación oficial</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="identificacion_oficial"
                     wire:model.defer="identificacion_oficial">
+                <label for="identificacion_oficial" class="form-input-file text-center"
+                    id="file_identificacion_oficial"><i class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('identificacion_oficial'))
                     <span>{{ $errors->first('identificacion_oficial') }}</span>
                 @endif

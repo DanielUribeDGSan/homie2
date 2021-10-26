@@ -19,17 +19,16 @@ class CreateTenantRoomiesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('compartira_renta');
-            $table->string('name');
-            $table->string('last_name');
-            $table->string('identificacion_oficial');
-            $table->string('email');
-            $table->string('phone');
-            $table->date('fecha_de_nacimiento');
-            $table->string('rfc');
-            $table->string('direccion_vivienda_actual');
-            $table->json('documentacion');
-            $table->string('historial_crediticio');
-
+            $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('identificacion_oficial')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->date('fecha_de_nacimiento')->nullable();
+            $table->string('rfc')->nullable();
+            $table->string('direccion_vivienda_actual')->nullable();
+            $table->json('documentacion')->nullable();
+            $table->string('historial_crediticio')->nullable();
 
             $table->timestamps();
         });
