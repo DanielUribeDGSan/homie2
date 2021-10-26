@@ -29,6 +29,7 @@ class CreateOwnersTable extends Migration
             $table->string('esta_amueblado');
             $table->string('identificacion_oficial');
             $table->string('metodo_pago');
+            $table->string('numero_cuenta');
             $table->string('puede_facturar');
             $table->string('precio_propiedad');
             $table->string('direccion');

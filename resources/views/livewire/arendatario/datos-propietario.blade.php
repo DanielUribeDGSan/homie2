@@ -28,7 +28,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <label for="phone" class="col-form-label fw-100 mt-2">Teléfono</label>
-                <input type="text" class="form-input" id="phone" onkeyup="onlyNum(this)" maxlength="20"
+                <input type="text" class="form-input" id="phone" onkeyup="onlyNumPhone(this)" maxlength="20"
                     wire:model.defer="createForm.phone" autocomplete="off">
                 @if ($errors->has('createForm.phone'))
                     <span>{{ $errors->first('createForm.phone') }}</span>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <label for="phone2" class="col-form-label fw-100 mt-2">Teléfono</label>
-                <input type="text" class="form-input" id="phone2" onkeyup="onlyNum(this)" maxlength="20"
+                <input type="text" class="form-input" id="phone2" onkeyup="onlyNumPhone(this)" maxlength="20"
                     wire:model.defer="createForm2.phone" autocomplete="off">
                 @if ($errors->has('createForm2.phone'))
                     <span>{{ $errors->first('createForm2.phone') }}</span>

@@ -23,16 +23,19 @@ class DatosPersonales extends Component
 
 
     public $createForm = [
+        'titulo_propiedad' => "",
         'escrituras' => "",
         'contrato_compraventa' => "",
         'poder_notarial' => "",
         'comprobante_domicilio' => "",
         'admite_mascotas' => "",
+        'cantidad_mascotas' => "",
         'tiene_estacionamiento' => "",
         'servicios' => "",
         'esta_amueblado' => "",
         'identificacion_oficial' => "",
         'metodo_pago' => "",
+        'numero_cuenta' => "",
         'puede_facturar' => "",
         'precio' => "",
         'direccion' => "",
@@ -76,12 +79,6 @@ class DatosPersonales extends Component
 
     public function registrarFormulario()
     {
-        $rules['escrituras'] = 'required';
-        $rules['contrato_compraventa'] = 'required';
-        $rules['poder_notarial'] = 'required';
-        $rules['comprobante_domicilio'] = 'required';
-        $rules['identificacion_oficial'] = 'required';
-
         $this->validate();
         $this->createForm['escrituras'] = $this->escrituras->store('propietario/escrituras');
         $this->createForm['contrato_compraventa'] = $this->contrato_compraventa->store('propietario/contrato_compraventa');
@@ -107,6 +104,9 @@ class DatosPersonales extends Component
             'admite_mascotas' => trim(
                 $this->createForm['admite_mascotas']
             ),
+            'cantidad_mascotas' => trim(
+                $this->createForm['cantidad_mascotas']
+            ),
             'tiene_estacionamiento' => trim(
                 $this->createForm['tiene_estacionamiento']
             ),
@@ -121,6 +121,9 @@ class DatosPersonales extends Component
             ),
             'metodo_pago' => trim(
                 $this->createForm['metodo_pago']
+            ),
+            'numero_cuenta' => trim(
+                $this->createForm['numero_cuenta']
             ),
             'puede_facturar' => trim(
                 $this->createForm['puede_facturar']

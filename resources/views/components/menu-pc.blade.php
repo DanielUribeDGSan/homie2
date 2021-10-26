@@ -6,7 +6,7 @@
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="logo">
                             <a class="link_ref" href="{{ route('home') }}"><img
-                                    src="{{ asset('assets/images/logo/logo.svg') }}" alt="logo HOMIE"></a>
+                                    src="{{ asset('assets/images/logo/logo-oficial.png') }}" alt="logo HOMIE"></a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block d-flex justify-content-center">

@@ -2,6 +2,19 @@
     <form onsubmit="return datosPersonales(event)">
         <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-3">
+                <label for="titulo_propiedad" class="col-form-label fw-100">Título de la propiedad</label>
+                <select class="form-input" id="titulo_propiedad" wire:model.defer="createForm.titulo_propiedad"
+                    onchange="tituloPropiedad()">
+                    <option value="" selected disabled>Selecciona una opción</option>
+                    <option value="Primeras 5 hojas de las escrituras">Primeras 5 hojas de las escrituras</option>
+                    <option value="Contrato de compra-venta">Contrato de compra-venta</option>
+                    <option value="Poder notarial">Poder notarial</option>
+                </select>
+                @if ($errors->has('createForm.titulo_propiedad'))
+                    <span>{{ $errors->first('createForm.titulo_propiedad') }}</span>
+                @endif
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mt-3 d-none escrituras">
                 <label class="col-form-label fw-100">Primeras 5 hojas de las escrituras</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="escrituras"
                     wire:model.defer="escrituras">
@@ -14,7 +27,7 @@
                     <span>{{ $errors->first('escrituras') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 d-none contrato_compraventa">
                 <label class="col-form-label fw-100"> Contrato de compra-venta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="contrato_compraventa"
                     wire:model.defer="contrato_compraventa">
@@ -27,7 +40,7 @@
                     <span>{{ $errors->first('contrato_compraventa') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 d-none poder_notarial">
                 <label class="col-form-label fw-100"> Poder notarial</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="poder_notarial"
                     wire:model.defer="poder_notarial">
@@ -57,16 +70,24 @@
                 <label class="col-form-label fw-100">¿Admite mascotas?</label><br />
                 <div class="form-check form-check-inline mt-2">
                     <input class="form-check-input" type="radio" name="admite_mascotas" id="admite_mascotas1" value="Si"
-                        wire:model.defer="createForm.admite_mascotas">
+                        wire:model.defer="createForm.admite_mascotas" onchange="cantidadMascotas()">
                     <label class="form-check-label" for="admite_mascotas1">Si</label>
                 </div>
                 <div class="form-check form-check-inline mt-2">
                     <input class="form-check-input" type="radio" name="admite_mascotas" id="admite_mascotas2" value="No"
-                        wire:model.defer="createForm.admite_mascotas">
+                        wire:model.defer="createForm.admite_mascotas" onchange="cantidadMascotas()">
                     <label class="form-check-label" for="admite_mascotas2">No</label>
                 </div>
                 @if ($errors->has('createForm.admite_mascotas'))
                     <span>{{ $errors->first('createForm.admite_mascotas') }}</span>
+                @endif
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mt-3 d-none cantidad-mascotas">
+                <label for="cantidad_mascotas" class="col-form-label fw-100">¿Cantidad de mascotas admitidas?</label>
+                <input type="text" class="form-input" id="cantidad_mascotas" onkeyup="onlyNum(this)" maxlength="255"
+                    wire:model.defer="createForm.cantidad_mascotas" autocomplete="off">
+                @if ($errors->has('createForm.cantidad_mascotas'))
+                    <span>{{ $errors->first('createForm.cantidad_mascotas') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
@@ -128,13 +149,22 @@
             <div class="col-lg-6 col-md-6 col-12 mt-3">
                 <label for="metodo_pago" class="col-form-label fw-100">Método de pago - como va a recibir el
                     pago</label>
-                <select class="form-input" id="metodo_pago" wire:model.defer="createForm.metodo_pago">
+                <select class="form-input" id="metodo_pago" onchange="solicitarNumeroCuenta()"
+                    wire:model.defer="createForm.metodo_pago">
                     <option value="" selected disabled>Selecciona una opción</option>
                     <option value="Sr Pago">Sr Pago</option>
                     <option value="Transferencia bancaria">Transferencia bancaria</option>
                 </select>
                 @if ($errors->has('createForm.metodo_pago'))
                     <span>{{ $errors->first('createForm.metodo_pago') }}</span>
+                @endif
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mt-3 d-none numero_cuenta">
+                <label for="numero_cuenta" class="col-form-label fw-100">Número de cuenta</label>
+                <input type="text" class="form-input" id="numero_cuenta" onkeyup="onlyLetrasNum(this)"
+                    maxlength="255" wire:model.defer="createForm.numero_cuenta" autocomplete="off">
+                @if ($errors->has('createForm.numero_cuenta'))
+                    <span>{{ $errors->first('createForm.numero_cuenta') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
@@ -155,7 +185,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
                 <label for="precio" class="col-form-label fw-100">Precio de la propiedad</label>
-                <input type="text" class="form-input" id="precio" onkeyup="onlyNum(this)" maxlength="13"
+                <input type="text" class="form-input" id="precio" onkeyup="onlyNumPrecio(this)" maxlength="13"
                     wire:model.defer="createForm.precio" autocomplete="off">
                 @if ($errors->has('createForm.precio'))
                     <span>{{ $errors->first('createForm.precio') }}</span>
@@ -188,12 +218,14 @@
         const datosPersonales = (e) => {
             e.preventDefault();
 
+            const titulo_propiedad = document.querySelector('#titulo_propiedad').value;
             const escrituras = document.querySelector('#escrituras').value;
             const contrato_compraventa = document.querySelector('#contrato_compraventa').value;
             const poder_notarial = document.querySelector('#poder_notarial').value;
             const comprobante_domicilio = document.querySelector('#comprobante_domicilio').value;
             const admite_mascotas1 = document.querySelector('#admite_mascotas1').checked;
             const admite_mascotas2 = document.querySelector('#admite_mascotas2').checked;
+            const cantidad_mascotas = document.querySelector('#cantidad_mascotas').value;
             const tiene_estacionamiento1 = document.querySelector('#tiene_estacionamiento1').checked;
             const tiene_estacionamiento2 = document.querySelector('#tiene_estacionamiento2').checked;
             const servicios = document.querySelector('#servicios').value;
@@ -201,13 +233,21 @@
             const esta_amueblado2 = document.querySelector('#esta_amueblado2').checked;
             const identificacion_oficial = document.querySelector('#identificacion_oficial').value;
             const metodo_pago = document.querySelector('#metodo_pago').value;
+            const numero_cuenta = document.querySelector('#numero_cuenta').value;
             const puede_facturar1 = document.querySelector('#puede_facturar1').checked;
             const puede_facturar2 = document.querySelector('#puede_facturar2').checked;
             const precio = document.querySelector('#precio').value;
             const direccion = document.querySelector('#direccion').value;
             // Livewire.emitTo('propietario.datos-personales', 'registrarFormulario');
-
-            if (escrituras == "") {
+            if (titulo_propiedad == "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Ups...',
+                    html: 'El campo "<b>Título de la propiedad</b>" no puede quedar vacío',
+                    confirmButtonText: 'Aceptar',
+                });
+                return false;
+            } else if (escrituras == "" && titulo_propiedad == 'Primeras 5 hojas de las escrituras') {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',
@@ -215,7 +255,7 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
-            } else if (contrato_compraventa == '') {
+            } else if (contrato_compraventa == '' && titulo_propiedad == 'Contrato de compra-venta') {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',
@@ -223,7 +263,7 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
-            } else if (poder_notarial == '') {
+            } else if (poder_notarial == '' && titulo_propiedad == 'Poder notarial') {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',
@@ -244,6 +284,14 @@
                     icon: 'warning',
                     title: 'Ups...',
                     html: 'El campo "<b>¿Admite mascotas?</b>" no puede quedar vacío',
+                    confirmButtonText: 'Aceptar',
+                });
+                return false;
+            } else if (admite_mascotas1 && cantidad_mascotas == "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Ups...',
+                    html: 'El campo "<b>¿Cantidad de mascotas admitidas?</b>" no puede quedar vacío',
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
@@ -287,6 +335,14 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
+            } else if (metodo_pago == 'Transferencia bancaria' && numero_cuenta == "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Ups...',
+                    html: 'El campo "<b>Número de cuenta</b>" no puede quedar vacío',
+                    confirmButtonText: 'Aceptar',
+                });
+                return false;
             } else if (!puede_facturar1 && !puede_facturar2) {
                 Swal.fire({
                     icon: 'warning',
@@ -314,6 +370,79 @@
             }
 
             Livewire.emitTo('propietario.datos-personales', 'registrarFormulario');
+        }
+
+        const cantidadMascotas = () => {
+            const admite_mascotas1 = document.querySelector('#admite_mascotas1').checked;
+            const admite_mascotas2 = document.querySelector('#admite_mascotas2').checked;
+            if (admite_mascotas1) {
+                document.querySelector('.cantidad-mascotas').classList.remove('d-none');
+            } else if (admite_mascotas2) {
+                document.querySelector('.cantidad-mascotas').classList.add('d-none');
+                document.querySelector('#cantidad_mascotas').value = "";
+
+            }
+        }
+
+        const tituloPropiedad = () => {
+            const titulo_propiedad = document.querySelector('#titulo_propiedad').value;
+            const escrituras = document.querySelector('.escrituras');
+            const contrato_compraventa = document.querySelector('.contrato_compraventa');
+            const poder_notarial = document.querySelector('.poder_notarial');
+
+            if (titulo_propiedad == 'Primeras 5 hojas de las escrituras') {
+                contrato_compraventa.classList.add('d-none');
+                poder_notarial.classList.add('d-none');
+                escrituras.classList.remove('d-none');
+
+                document.querySelector('#poder_notarial').value = "";
+                document.querySelector('#contrato_compraventa').value = "";
+
+                document.querySelector(`#file_poder_notarial`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                document.querySelector(`#file_contrato_compraventa`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+
+            } else if (titulo_propiedad == 'Contrato de compra-venta') {
+                contrato_compraventa.classList.remove('d-none');
+                poder_notarial.classList.add('d-none');
+                escrituras.classList.add('d-none');
+
+                document.querySelector('#poder_notarial').value = "";
+                document.querySelector('#escrituras').value = "";
+
+                document.querySelector(`#file_poder_notarial`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                document.querySelector(`#file_escrituras`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+
+
+            } else if (titulo_propiedad == 'Poder notarial') {
+                contrato_compraventa.classList.add('d-none');
+                poder_notarial.classList.remove('d-none');
+                escrituras.classList.add('d-none');
+
+                document.querySelector('#escrituras').value = "";
+                document.querySelector('#contrato_compraventa').value = "";
+
+                document.querySelector(`#contrato_compraventa`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                document.querySelector(`#file_escrituras`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+            }
+
+        }
+
+        const solicitarNumeroCuenta = () => {
+            const metodo_pago = document.querySelector('#metodo_pago').value;
+            if (metodo_pago == 'Transferencia bancaria') {
+                document.querySelector('.numero_cuenta').classList.remove('d-none');
+
+            } else if (metodo_pago == 'Sr Pago') {
+                document.querySelector('.numero_cuenta').classList.add('d-none');
+                document.querySelector('#numero_cuenta').value = "";
+
+            }
         }
     </script>
 

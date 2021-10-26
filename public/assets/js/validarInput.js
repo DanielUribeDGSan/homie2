@@ -9,8 +9,18 @@ function onlyEmail(input) {
     input.value = input.value.replace(regex, "");
 }
 
-function onlyNum(input) {
+function onlyNumPrecio(input) {
+    var regex = /[^$12345678910]/gi;;
+    input.value = input.value.replace(regex, "");
+}
+
+function onlyNumPhone(input) {
     var regex = /[^+12345678910]/gi;;
+    input.value = input.value.replace(regex, "");
+}
+
+function onlyNum(input) {
+    var regex = /[^12345678910]/gi;;
     input.value = input.value.replace(regex, "");
 }
 
@@ -81,5 +91,21 @@ $(document).on('change', 'input[type="file"]', function () {
             this.value = '';
         }
 
+    }
+});
+
+
+// Money input
+
+$("#precio").on({
+    "focus": function (event) {
+        $(event.target).select();
+    },
+    "keyup": function (event) {
+        $(event.target).val(function (index, value) {
+            return '$' + value.replace(/\D/g, "")
+                .replace(/([0-9])([0-9]{2})$/, '$1.$2')
+                .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+        });
     }
 });
