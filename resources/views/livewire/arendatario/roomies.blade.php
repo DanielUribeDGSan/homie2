@@ -164,11 +164,6 @@
                     value="Tengo tarjeta de débito" wire:model.defer="createForm.historial_crediticio">
                 <label class="form-check-label" for="historial_crediticio2">Tengo tarjeta de débito</label>
             </div>
-            <div class="form-check form-check-inline mt-2">
-                <input class="form-check-input" type="radio" name="historial_crediticio" id="historial_crediticio3"
-                    value="No tengo tarjetas" wire:model.defer="createForm.historial_crediticio">
-                <label class="form-check-label" for="historial_crediticio3">No tengo tarjetas</label>
-            </div>
             @if ($errors->has('createForm.historial_crediticio'))
                 <span>{{ $errors->first('createForm.historial_crediticio') }}</span>
             @endif
@@ -212,7 +207,6 @@
             const comprobante_nomina3 = document.querySelector('#comprobante_nomina3').value
             const historial_crediticio = document.querySelector('#historial_crediticio1').checked;
             const historial_crediticio2 = document.querySelector('#historial_crediticio2').checked;
-            const historial_crediticio3 = document.querySelector('#historial_crediticio3').checked;
 
 
 
@@ -331,7 +325,7 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
-            } else if (!historial_crediticio && !historial_crediticio2 && !historial_crediticio3) {
+            } else if (!historial_crediticio && !historial_crediticio2) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',

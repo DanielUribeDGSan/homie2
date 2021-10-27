@@ -37,11 +37,18 @@ const verPassword = (input) => {
 const showFile = (id, name) => {
 
     const file_label = document.querySelector(`#file_${id}`);
-
-    if (name.length > 18) {
-        file_label.innerHTML = `Archivo seleccionado: ${name.substr(0, 18)}...`;
+    if (file_label == 'file_comprobante_nomina1') {
+        if (name.length > 18) {
+            file_label.innerHTML = `Archivos seleccionados: ${name.substr(0, 18)}...`;
+        } else {
+            file_label.innerHTML = `Archivos seleccionados: ${name}`;
+        }
     } else {
-        file_label.innerHTML = `Archivo seleccionado: ${name}`;
+        if (name.length > 18) {
+            file_label.innerHTML = `Archivo seleccionado: ${name.substr(0, 18)}...`;
+        } else {
+            file_label.innerHTML = `Archivo seleccionado: ${name}`;
+        }
     }
 }
 
@@ -96,6 +103,19 @@ $(document).on('change', 'input[type="file"]', function () {
 
 
 // Money input
+
+$("#ingresos_netos").on({
+    "focus": function (event) {
+        $(event.target).select();
+    },
+    "keyup": function (event) {
+        $(event.target).val(function (index, value) {
+            return '$' + value.replace(/\D/g, "")
+                .replace(/([0-9])([0-9]{2})$/, '$1.$2')
+                .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+        });
+    }
+});
 
 $("#precio").on({
     "focus": function (event) {

@@ -203,7 +203,7 @@
         <div class="form-group row">
             <div class="col-6 mt-5">
                 <button type="submit" class="btn btn-orange-sm loading-btn">Registrar datos</button>
-                <div class="loading d-none">
+                <div class="loading-btn d-none">
                     <x-loading />
                 </div>
             </div>
@@ -369,6 +369,9 @@
                 return false;
             }
 
+            document.querySelector('.loading-btn').classList.remove('d-none');
+            document.querySelector('.loading-btn').classList.add('d-none');
+
             Livewire.emitTo('propietario.datos-personales', 'registrarFormulario');
         }
 
@@ -425,7 +428,7 @@
                 document.querySelector('#escrituras').value = "";
                 document.querySelector('#contrato_compraventa').value = "";
 
-                document.querySelector(`#contrato_compraventa`).innerHTML =
+                document.querySelector(`#file_contrato_compraventa`).innerHTML =
                     '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
                 document.querySelector(`#file_escrituras`).innerHTML =
                     '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';

@@ -1,6 +1,6 @@
-<div x-data class="mt-3">
+<div x-data class="mt-3" wire:ignore>
     <form onsubmit="return datosPersonales(event)">
-        <div class="form-group row" wire:ignore>
+        <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-3">
                 <label class="col-form-label fw-100">Tipo de persona</label><br />
                 <div class="form-check form-check-inline mt-2">
@@ -54,9 +54,14 @@
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3">
-                <label for="identificacion_oficial" class="col-form-label fw-100">Identificación oficial</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="identificacion_oficial"
+                <label class="col-form-label fw-100">Identificación oficial</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="identificacion_oficial"
                     wire:model.defer="identificacion_oficial">
+                <label for="identificacion_oficial" class="form-input-file text-center"
+                    id="file_identificacion_oficial"><i class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('identificacion_oficial'))
                     <span>{{ $errors->first('identificacion_oficial') }}</span>
                 @endif
@@ -90,11 +95,6 @@
                         value="Tengo tarjeta de débito" wire:model.defer="createForm.historial_crediticio">
                     <label class="form-check-label" for="historial_crediticio2">Tengo tarjeta de débito</label>
                 </div>
-                <div class="form-check form-check-inline mt-2">
-                    <input class="form-check-input" type="radio" name="historial_crediticio" id="historial_crediticio3"
-                        value="No tengo tarjetas" wire:model.defer="createForm.historial_crediticio">
-                    <label class="form-check-label" for="historial_crediticio3">No tengo tarjetas</label>
-                </div>
                 @if ($errors->has('createForm.historial_crediticio'))
                     <span>{{ $errors->first('createForm.historial_crediticio') }}</span>
                 @endif
@@ -117,7 +117,7 @@
                 @endif
             </div>
         </div>
-        <div class="form-group row" wire:ignore>
+        <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-3 nombre-empresa">
                 <label for="empresa" class="col-form-label fw-100">Nombre de la empresa</label>
                 <input type="text" class="form-input" id="empresa" onkeyup="onlyLetrasNum(this)" maxlength="255"
@@ -152,61 +152,65 @@
                 @endif
             </div>
         </div>
-        <div class="form-group row" wire:ignore>
+        <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta">
-                <label for="estado_cuenta1" class="col-form-label fw-100">Primer estado de cuenta</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="estado_cuenta1"
+                <label class="col-form-label fw-100">Primer estado de cuenta</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta1"
                     wire:model.defer="estado_cuenta1">
+                <label for="estado_cuenta1" class="form-input-file text-center" id="file_estado_cuenta1"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('estado_cuenta1'))
                     <span>{{ $errors->first('estado_cuenta1') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta">
-                <label for="estado_cuenta2" class="col-form-label fw-100">Segundo estado de cuenta</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="estado_cuenta2"
+                <label class="col-form-label fw-100">Segundo estado de cuenta</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta2"
                     wire:model.defer="estado_cuenta2">
+                <label for="estado_cuenta2" class="form-input-file text-center" id="file_estado_cuenta2"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('estado_cuenta2'))
                     <span>{{ $errors->first('estado_cuenta2') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta">
-                <label for="estado_cuenta3" class="col-form-label fw-100">Tercer estado de cuenta</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="estado_cuenta3"
+                <label class="col-form-label fw-100">Tercer estado de cuenta</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta3"
                     wire:model.defer="estado_cuenta3">
+                <label for="estado_cuenta3" class="form-input-file text-center" id="file_estado_cuenta3"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
                 @if ($errors->has('estado_cuenta3'))
                     <span>{{ $errors->first('estado_cuenta3') }}</span>
                 @endif
             </div>
             <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina">
-                <label for="comprobante_nomina1" class="col-form-label fw-100">Primer comprobante de nónima</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="comprobante_nomina1"
-                    wire:model.defer="comprobante_nomina1">
-                @if ($errors->has('comprobante_nomina1'))
-                    <span>{{ $errors->first('comprobante_nomina1') }}</span>
+                <label class="col-form-label fw-100">Selecciona tus 6 archivos de nomina, de tus ultimos 3 meses</label>
+                <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_nomina1"
+                    name="nominas[]" wire:model.defer="nominas" multiple onchange="validarCantidadFiles()">
+                <label for="comprobante_nomina1" class="form-input-file text-center" id="file_comprobante_nomina1"><i
+                        class="far fa-file-pdf"></i> Da click aquí
+                    para
+                    subir
+                    tu archivo</label>
+                @if ($errors->has('nominas'))
+                    <span>{{ $errors->first('nominas') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina">
-                <label for="comprobante_nomina2" class="col-form-label fw-100">Segundo comprobante de nónima</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="comprobante_nomina2"
-                    wire:model.defer="comprobante_nomina2">
-                @if ($errors->has('comprobante_nomina2'))
-                    <span>{{ $errors->first('comprobante_nomina2') }}</span>
-                @endif
-            </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina">
-                <label for="comprobante_nomina3" class="col-form-label fw-100">Tercer comprobante de nónima</label>
-                <input type="file" accept="image/*,.pdf" class="form-input" id="comprobante_nomina3"
-                    wire:model.defer="comprobante_nomina3">
-                @if ($errors->has('comprobante_nomina3'))
-                    <span>{{ $errors->first('comprobante_nomina3') }}</span>
-                @endif
-            </div>
+
         </div>
         <div class="form-group row">
             <div class="col-6 mt-5">
-                <button type="submit" class="btn btn-orange-sm" wire:loading.attr="disabled"
-                    wire:loading.remove>Siguiente</button>
-                <div wire:loading wire:loading.class="d-flex align-items-center">
+                <button type="submit" class="btn btn-orange-sm loading-btn">Siguiente</button>
+                <div class="loading-btn d-none">
                     <x-loading />
                 </div>
             </div>
@@ -217,7 +221,7 @@
             </div>
         </div>
     </form>
-    <script wire:ignore>
+    <script>
         const datosPersonales = (e) => {
             e.preventDefault();
 
@@ -232,7 +236,6 @@
             const institucion_educativa = document.querySelector('#institucion_educativa').value;
             const historial_crediticio = document.querySelector('#historial_crediticio1').checked;
             const historial_crediticio2 = document.querySelector('#historial_crediticio2').checked;
-            const historial_crediticio3 = document.querySelector('#historial_crediticio3').checked;
             const trabajo = document.querySelector('#trabajo1').checked;
             const trabajo2 = document.querySelector('#trabajo2').checked;
             const empresa = document.querySelector('#empresa').value;
@@ -242,8 +245,7 @@
             const estado_cuenta2 = document.querySelector('#estado_cuenta2').value
             const estado_cuenta3 = document.querySelector('#estado_cuenta3').value
             const comprobante_nomina1 = document.querySelector('#comprobante_nomina1').value
-            const comprobante_nomina2 = document.querySelector('#comprobante_nomina2').value
-            const comprobante_nomina3 = document.querySelector('#comprobante_nomina3').value
+
 
             if (!tipo_persona && !tipo_persona2) {
                 Swal.fire({
@@ -309,7 +311,7 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
-            } else if (!historial_crediticio && !historial_crediticio2 && !historial_crediticio3) {
+            } else if (!historial_crediticio && !historial_crediticio2) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',
@@ -350,7 +352,7 @@
                 });
                 return false;
             } else if (documentacion == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' && !
-                comprobante_nomina1 && !comprobante_nomina2 && !comprobante_nomina3) {
+                comprobante_nomina1) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Ups...',
@@ -368,6 +370,10 @@
                 });
                 return false;
             }
+
+            document.querySelector('.loading-btn').classList.remove('d-none');
+            document.querySelector('.loading-btn').classList.add('d-none');
+
             Livewire.emitTo('arendatario.datos-personales', 'registrarFormulario');
         }
 
@@ -425,6 +431,13 @@
                 document.querySelector('#estado_cuenta2').value = "";
                 document.querySelector('#estado_cuenta3').value = "";
 
+                document.querySelector(`#file_estado_cuenta1`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                document.querySelector(`#file_estado_cuenta2`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                document.querySelector(`#file_estado_cuenta3`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+
             } else if (documentacion == 'Estados de cuenta completos (3 meses)') {
                 const documentos_nomina = document.getElementsByClassName("comprobante-nomina");
                 for (let i = 0; i < documentos_nomina.length; i++) {
@@ -437,8 +450,76 @@
                 }
 
                 document.querySelector('#comprobante_nomina1').value = "";
-                document.querySelector('#comprobante_nomina2').value = "";
-                document.querySelector('#comprobante_nomina3').value = "";
+
+                document.querySelector(`#file_comprobante_nomina1`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+            }
+        }
+
+        const validarCantidadFiles = () => {
+            const fileUpload = $("#comprobante_nomina1");
+
+            if (parseInt(fileUpload.get(0).files.length) > 6 || parseInt(fileUpload.get(0).files.length) < 6) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Archivos incorrectos',
+                    html: 'Tienes que seleccionar 6 archivos',
+                    confirmButtonText: 'Aceptar',
+                });
+                document.querySelector('#comprobante_nomina1').value = "";
+                document.querySelector(`#file_comprobante_nomina1`).innerHTML =
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                return false;
+            } else {
+                for (let index = 0; index < fileUpload.get(0).files.length; index++) {
+
+                    const fileName = fileUpload.get(0).files[index].name;
+                    const fileSize = fileUpload.get(0).files[index].size;
+
+                    if (fileSize > 2000000) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Tamaño no permitido',
+                            html: `El archivo ${fileName} no debe de ser mayor a 2 megas`,
+                            confirmButtonText: 'Aceptar',
+                        });
+                        document.querySelector('#comprobante_nomina1').value = "";
+                        document.querySelector(`#file_comprobante_nomina1`).innerHTML =
+                            '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+
+                    } else {
+
+                        let ext = fileName.split('.').pop();
+                        ext = ext.toLowerCase();
+
+                        const arrExtenciones = [
+                            "jpg",
+                            "JPG",
+                            "jpeg",
+                            "JPEG",
+                            "png",
+                            "PNG",
+                            "pdf",
+                            "PDF"
+                        ];
+
+                        let validarExtencion = arrExtenciones.includes(ext);
+                        if (validarExtencion) {
+
+                        } else {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Formato incorrecto',
+                                html: `El archivo ${fileName} no tiene un formato valido. <br/>Formatos validos ( .jpg | .jpeg | .png | .pdf)`,
+                                confirmButtonText: 'Aceptar',
+                            });
+
+                            document.querySelector('#comprobante_nomina1').value = "";
+                            document.querySelector(`#file_comprobante_nomina1`).innerHTML =
+                                '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                        }
+                    }
+                }
             }
         }
     </script>

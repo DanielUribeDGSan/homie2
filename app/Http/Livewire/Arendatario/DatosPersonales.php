@@ -16,8 +16,8 @@ class DatosPersonales extends Component
 
     protected $listeners = ['registrarFormulario'];
 
-    public $identificacion_oficial, $documentos;
-    public $comprobante_nomina1, $comprobante_nomina2, $comprobante_nomina3;
+    public $identificacion_oficial, $documentos, $nominas = [];
+
     public $estado_cuenta1, $estado_cuenta2, $estado_cuenta3;
 
     public $createForm = [
@@ -69,16 +69,19 @@ class DatosPersonales extends Component
     public function registrarFormulario()
     {
 
-        $rules['identificacion_oficial'] = 'required';
-
         $this->validate();
         $this->createForm['identificacion_oficial'] = $this->identificacion_oficial->store('alquilino/identificacion');
 
         if ($this->createForm['documentacion'] == 'Comprobantes de nómina timbrados SAT (3 últimos meses)') {
-            $url_nomina1 = $this->comprobante_nomina1->store('alquilino/nomina');
-            $url_nomina2 = $this->comprobante_nomina2->store('alquilino/nomina');
-            $url_nomina3 = $this->comprobante_nomina3->store('alquilino/nomina');
-            $this->documentos = '{"estado_cuenta1":{"url":"' . $url_nomina1 . '"},"estado_cuenta2":{"url":"' . $url_nomina2 . '"},"estado_cuenta3":{"url":"' . $url_nomina3 . '"}}';
+
+            $documentos = array();
+
+            foreach ($this->nominas as $doc) {
+                $documentos[] = $doc->store('alquilino/nominas');
+            }
+            $this->documentos = json_decode(print_r($documentos));
+            // $url_nomina1 = $this->comprobante_nomina1->store('alquilino/nomina');
+            // $this->documentos = '{"estado_cuenta1":{"url":"' . $url_nomina1 . '"},"estado_cuenta2":{"url":"' . $url_nomina2 . '"},"estado_cuenta3":{"url":"' . $url_nomina3 . '"}}';
         } else if ($this->createForm['documentacion'] == 'Estados de cuenta completos (3 meses)') {
             $url_esatdo_cuenta1 = $this->estado_cuenta1->store('alquilino/estado_cuenta');
             $url_esatdo_cuenta2 = $this->estado_cuenta2->store('alquilino/estado_cuenta');
