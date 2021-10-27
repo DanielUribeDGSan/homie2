@@ -37,22 +37,21 @@ const verPassword = (input) => {
 const showFile = (id, name) => {
 
     const file_label = document.querySelector(`#file_${id}`);
-    if (file_label == 'file_comprobante_nomina1') {
-        if (name.length > 18) {
-            file_label.innerHTML = `Archivos seleccionados: ${name.substr(0, 18)}...`;
-        } else {
-            file_label.innerHTML = `Archivos seleccionados: ${name}`;
-        }
+
+    if (name.length > 18) {
+        file_label.innerHTML = `Archivo seleccionado: ${name.substr(0, 18)}...`;
     } else {
-        if (name.length > 18) {
-            file_label.innerHTML = `Archivo seleccionado: ${name.substr(0, 18)}...`;
-        } else {
-            file_label.innerHTML = `Archivo seleccionado: ${name}`;
-        }
+        file_label.innerHTML = `Archivo seleccionado: ${name}`;
     }
+
 }
 
 $(document).on('change', 'input[type="file"]', function () {
+
+
+    if (this.id == 'comprobante_nomina1') {
+        return false;
+    }
 
     const fileName = this.files[0].name;
     const fileSize = this.files[0].size;

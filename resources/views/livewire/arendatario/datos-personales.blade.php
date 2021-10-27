@@ -200,7 +200,7 @@
                         class="far fa-file-pdf"></i> Da click aquí
                     para
                     subir
-                    tu archivo</label>
+                    tus archivos</label>
                 @if ($errors->has('nominas'))
                     <span>{{ $errors->first('nominas') }}</span>
                 @endif
@@ -209,7 +209,7 @@
         </div>
         <div class="form-group row">
             <div class="col-6 mt-5">
-                <button type="submit" class="btn btn-orange-sm loading-btn">Siguiente</button>
+                <button type="submit" class="btn btn-orange-sm btn-loading">Siguiente</button>
                 <div class="loading-btn d-none">
                     <x-loading />
                 </div>
@@ -241,11 +241,10 @@
             const empresa = document.querySelector('#empresa').value;
             const actividad_empresa = document.querySelector('#actividad_empresa').value;
             const documentacion = document.querySelector('#documentacion').value;
-            const estado_cuenta1 = document.querySelector('#estado_cuenta1').value
-            const estado_cuenta2 = document.querySelector('#estado_cuenta2').value
-            const estado_cuenta3 = document.querySelector('#estado_cuenta3').value
-            const comprobante_nomina1 = document.querySelector('#comprobante_nomina1').value
-
+            const estado_cuenta1 = document.querySelector('#estado_cuenta1').value;
+            const estado_cuenta2 = document.querySelector('#estado_cuenta2').value;
+            const estado_cuenta3 = document.querySelector('#estado_cuenta3').value;
+            const comprobante_nomina1 = document.querySelector('#comprobante_nomina1').value;
 
             if (!tipo_persona && !tipo_persona2) {
                 Swal.fire({
@@ -371,10 +370,13 @@
                 return false;
             }
 
+            document.querySelector('.btn-loading').classList.add('d-none');
             document.querySelector('.loading-btn').classList.remove('d-none');
-            document.querySelector('.loading-btn').classList.add('d-none');
 
-            Livewire.emitTo('arendatario.datos-personales', 'registrarFormulario');
+            setTimeout(function() {
+                Livewire.emitTo('arendatario.datos-personales', 'registrarFormulario');
+            }, 2000);
+
         }
 
         document.querySelector('.nombre-empresa').classList.add('d-none');
@@ -452,7 +454,7 @@
                 document.querySelector('#comprobante_nomina1').value = "";
 
                 document.querySelector(`#file_comprobante_nomina1`).innerHTML =
-                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tus archivos';
             }
         }
 
@@ -468,7 +470,7 @@
                 });
                 document.querySelector('#comprobante_nomina1').value = "";
                 document.querySelector(`#file_comprobante_nomina1`).innerHTML =
-                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                    '<i class="far fa-file-pdf "></i> Da click aquí para subir tus archivos';
                 return false;
             } else {
                 for (let index = 0; index < fileUpload.get(0).files.length; index++) {
@@ -485,7 +487,7 @@
                         });
                         document.querySelector('#comprobante_nomina1').value = "";
                         document.querySelector(`#file_comprobante_nomina1`).innerHTML =
-                            '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                            '<i class="far fa-file-pdf "></i> Da click aquí para subir tus archivos';
 
                     } else {
 
@@ -505,7 +507,7 @@
 
                         let validarExtencion = arrExtenciones.includes(ext);
                         if (validarExtencion) {
-
+                            document.querySelector('#file_comprobante_nomina1').innerHTML = '6 archivos seleccionados';
                         } else {
                             Swal.fire({
                                 icon: 'warning',
@@ -516,12 +518,28 @@
 
                             document.querySelector('#comprobante_nomina1').value = "";
                             document.querySelector(`#file_comprobante_nomina1`).innerHTML =
-                                '<i class="far fa-file-pdf "></i> Da click aquí para subir tu archivo';
+                                '<i class="far fa-file-pdf "></i> Da click aquí para subir tus archivos';
                         }
                     }
                 }
             }
         }
     </script>
+
+    @push('script')
+        <script>
+            Livewire.on('errorDocumentos', function() {
+                document.querySelector('.btn-loading').classList.remove('d-none');
+                document.querySelector('.loading-btn').classList.add('d-none');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Espera un momento...',
+                    html: 'Tus documentos aún no se suben, espera 10 segundos mas.',
+                    confirmButtonText: 'Aceptar',
+                });
+                return false;
+            });
+        </script>
+    @endpush
 
 </div>

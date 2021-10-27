@@ -80,80 +80,87 @@ class DatosPersonales extends Component
     public function registrarFormulario()
     {
         $this->validate();
-        $this->createForm['escrituras'] = $this->escrituras->store('propietario/escrituras');
-        $this->createForm['contrato_compraventa'] = $this->contrato_compraventa->store('propietario/contrato_compraventa');
-        $this->createForm['poder_notarial'] = $this->poder_notarial->store('propietario/poder_notarial');
-        $this->createForm['comprobante_domicilio'] = $this->comprobante_domicilio->store('propietario/comprobante_domicilio');
-        $this->createForm['identificacion_oficial'] = $this->identificacion_oficial->store('propietario/identificacion_oficial');
+        if ($this->escrituras || $this->contrato_compraventa || $this->poder_notarial && $this->comprobante_domicilio && $this->identificacion_oficial) {
 
-        $propietario = Owner::create([
-            'transaction' => Auth::user()->transaction,
-            'user_id' => Auth::user()->id,
-            'escrituras' => trim(
-                $this->createForm['escrituras']
-            ),
-            'contrato_compra_venta' => trim(
-                $this->createForm['contrato_compraventa']
-            ),
-            'poder_notarial' => trim(
-                $this->createForm['poder_notarial']
-            ),
-            'comprobante_domicilio' => trim(
-                $this->createForm['comprobante_domicilio']
-            ),
-            'admite_mascotas' => trim(
-                $this->createForm['admite_mascotas']
-            ),
-            'cantidad_mascotas' => trim(
-                $this->createForm['cantidad_mascotas']
-            ),
-            'tiene_estacionamiento' => trim(
-                $this->createForm['tiene_estacionamiento']
-            ),
-            'servicios' => trim(
-                $this->createForm['servicios']
-            ),
-            'esta_amueblado' => trim(
-                $this->createForm['esta_amueblado']
-            ),
-            'identificacion_oficial' => trim(
-                $this->createForm['identificacion_oficial']
-            ),
-            'metodo_pago' => trim(
-                $this->createForm['metodo_pago']
-            ),
-            'numero_cuenta' => trim(
-                $this->createForm['numero_cuenta']
-            ),
-            'puede_facturar' => trim(
-                $this->createForm['puede_facturar']
-            ),
-            'precio_propiedad' => trim(
-                $this->createForm['precio']
-            ),
-            'direccion' => trim(
-                $this->createForm['direccion']
-            ),
-        ]);
+            $this->createForm['escrituras'] = $this->escrituras->store('propietario/escrituras');
+            $this->createForm['contrato_compraventa'] = $this->contrato_compraventa->store('propietario/contrato_compraventa');
+            $this->createForm['poder_notarial'] = $this->poder_notarial->store('propietario/poder_notarial');
+            $this->createForm['comprobante_domicilio'] = $this->comprobante_domicilio->store('propietario/comprobante_domicilio');
+            $this->createForm['identificacion_oficial'] = $this->identificacion_oficial->store('propietario/identificacion_oficial');
 
-        $user = User::where('id', Auth::user()->id)->first();
-        $user->update(
-            [
-                'fase' => 2,
-            ]
-        );
-        Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
 
-        $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
-        if (!is_null($user_invitacion)) {
-            if ($user_invitacion->hasRole('broker')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+
+            $propietario = Owner::create([
+                'transaction' => Auth::user()->transaction,
+                'user_id' => Auth::user()->id,
+                'escrituras' => trim(
+                    $this->createForm['escrituras']
+                ),
+                'contrato_compra_venta' => trim(
+                    $this->createForm['contrato_compraventa']
+                ),
+                'poder_notarial' => trim(
+                    $this->createForm['poder_notarial']
+                ),
+                'comprobante_domicilio' => trim(
+                    $this->createForm['comprobante_domicilio']
+                ),
+                'admite_mascotas' => trim(
+                    $this->createForm['admite_mascotas']
+                ),
+                'cantidad_mascotas' => trim(
+                    $this->createForm['cantidad_mascotas']
+                ),
+                'tiene_estacionamiento' => trim(
+                    $this->createForm['tiene_estacionamiento']
+                ),
+                'servicios' => trim(
+                    $this->createForm['servicios']
+                ),
+                'esta_amueblado' => trim(
+                    $this->createForm['esta_amueblado']
+                ),
+                'identificacion_oficial' => trim(
+                    $this->createForm['identificacion_oficial']
+                ),
+                'metodo_pago' => trim(
+                    $this->createForm['metodo_pago']
+                ),
+                'numero_cuenta' => trim(
+                    $this->createForm['numero_cuenta']
+                ),
+                'puede_facturar' => trim(
+                    $this->createForm['puede_facturar']
+                ),
+                'precio_propiedad' => trim(
+                    $this->createForm['precio']
+                ),
+                'direccion' => trim(
+                    $this->createForm['direccion']
+                ),
+            ]);
+
+            $user = User::where('id', Auth::user()->id)->first();
+            $user->update(
+                [
+                    'fase' => 2,
+                ]
+            );
+            Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($user));
+
+            $user_invitacion = User::where('transaction', Auth::user()->transaction)->first();
+            if (!is_null($user_invitacion)) {
+                if ($user_invitacion->hasRole('broker')) {
+                    Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+                }
+                if ($user_invitacion->hasRole('arendatario')) {
+                    Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
+                }
             }
-            if ($user_invitacion->hasRole('arendatario')) {
-                Mail::to($user_invitacion->email)->send(new MailProcesoTerminadoPropietario($user_invitacion, Auth::user()->name, Auth::user()->last_name));
-            }
+            return redirect()->route('registro_completado');
+        } else {
+            $this->emit('errorDocumentosPropietario');
         }
-        return redirect()->route('registro_completado');
     }
 
     public function render()

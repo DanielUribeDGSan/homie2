@@ -70,75 +70,78 @@ class DatosPersonales extends Component
     {
 
         $this->validate();
-        $this->createForm['identificacion_oficial'] = $this->identificacion_oficial->store('alquilino/identificacion');
+        if ($this->estado_cuenta1 && $this->estado_cuenta2 && $this->estado_cuenta3 && $this->identificacion_oficial || $this->nominas &&  $this->identificacion_oficial) {
+            $this->createForm['identificacion_oficial'] = $this->identificacion_oficial->store('inquilino/identificacion');
 
-        if ($this->createForm['documentacion'] == 'Comprobantes de nómina timbrados SAT (3 últimos meses)') {
+            if ($this->createForm['documentacion'] == 'Comprobantes de nómina timbrados SAT (3 últimos meses)') {
 
-            $documentos = array();
+                $documentos = array();
 
-            foreach ($this->nominas as $doc) {
-                $documentos[] = $doc->store('alquilino/nominas');
+                foreach ($this->nominas as $doc) {
+                    $documentos[] = $doc->store('inquilino/nominas');
+                }
+                $this->documentos = json_encode($documentos);
+            } else if ($this->createForm['documentacion'] == 'Estados de cuenta completos (3 meses)') {
+                $url_esatdo_cuenta1 = $this->estado_cuenta1->store('inquilino/estado_cuenta');
+                $url_esatdo_cuenta2 = $this->estado_cuenta2->store('inquilino/estado_cuenta');
+                $url_esatdo_cuenta3 = $this->estado_cuenta3->store('inquilino/estado_cuenta');
+                $this->documentos = '{"estado_cuenta1":{"url":"' . $url_esatdo_cuenta1 . '"},"estado_cuenta2":{"url":"' . $url_esatdo_cuenta2 . '"},"estado_cuenta3":{"url":"' . $url_esatdo_cuenta3 . '"}}';
             }
-            $this->documentos = json_decode(print_r($documentos));
-            // $url_nomina1 = $this->comprobante_nomina1->store('alquilino/nomina');
-            // $this->documentos = '{"estado_cuenta1":{"url":"' . $url_nomina1 . '"},"estado_cuenta2":{"url":"' . $url_nomina2 . '"},"estado_cuenta3":{"url":"' . $url_nomina3 . '"}}';
-        } else if ($this->createForm['documentacion'] == 'Estados de cuenta completos (3 meses)') {
-            $url_esatdo_cuenta1 = $this->estado_cuenta1->store('alquilino/estado_cuenta');
-            $url_esatdo_cuenta2 = $this->estado_cuenta2->store('alquilino/estado_cuenta');
-            $url_esatdo_cuenta3 = $this->estado_cuenta3->store('alquilino/estado_cuenta');
-            $this->documentos = '{"estado_cuenta1":{"url":"' . $url_esatdo_cuenta1 . '"},"estado_cuenta2":{"url":"' . $url_esatdo_cuenta2 . '"},"estado_cuenta3":{"url":"' . $url_esatdo_cuenta3 . '"}}';
+
+            $inquilino = Tenant::create([
+                'transaction' => Auth::user()->transaction,
+                'user_id' => Auth::user()->id,
+                'tipo_de_persona' => trim(
+                    $this->createForm['tipo_persona']
+                ),
+                'rfc' => trim(
+                    $this->createForm['rfc']
+                ),
+                'fecha_de_nacimiento' => trim(
+                    $this->createForm['fecha_nacimiento']
+                ),
+                'estado_civil' => trim(
+                    $this->createForm['estado_civil']
+                ),
+                'ingresos_netos' => trim(
+                    $this->createForm['ingresos_netos']
+                ),
+                'identificacion_oficial' => trim(
+                    $this->createForm['identificacion_oficial']
+                ),
+                'direccion_vivienda_actual' => trim(
+                    $this->createForm['direccion_vivienda']
+                ),
+                'institucion_educativa' => trim(
+                    $this->createForm['institucion_educativa']
+                ),
+                'historial_crediticio' => trim(
+                    $this->createForm['historial_crediticio']
+                ),
+                'trabajo' => trim(
+                    $this->createForm['trabajo']
+                ),
+                'empresa' => trim(
+                    $this->createForm['empresa']
+                ),
+                'actividad_empresa' => trim(
+                    $this->createForm['actividad_empresa']
+                ),
+                'documentacion' => $this->documentos,
+
+            ]);
+
+            $inquilino = User::where('id', Auth::user()->id)->first();
+            $inquilino->update(
+                [
+                    'fase' => 2,
+                ]
+            );
+            return redirect()->route('inquilino.referencias');
+        } else {
+
+            $this->emit('errorDocumentos');
         }
-
-        $inquilino = Tenant::create([
-            'transaction' => Auth::user()->transaction,
-            'user_id' => Auth::user()->id,
-            'tipo_de_persona' => trim(
-                $this->createForm['tipo_persona']
-            ),
-            'rfc' => trim(
-                $this->createForm['rfc']
-            ),
-            'fecha_de_nacimiento' => trim(
-                $this->createForm['fecha_nacimiento']
-            ),
-            'estado_civil' => trim(
-                $this->createForm['estado_civil']
-            ),
-            'ingresos_netos' => trim(
-                $this->createForm['ingresos_netos']
-            ),
-            'identificacion_oficial' => trim(
-                $this->createForm['identificacion_oficial']
-            ),
-            'direccion_vivienda_actual' => trim(
-                $this->createForm['direccion_vivienda']
-            ),
-            'institucion_educativa' => trim(
-                $this->createForm['institucion_educativa']
-            ),
-            'historial_crediticio' => trim(
-                $this->createForm['historial_crediticio']
-            ),
-            'trabajo' => trim(
-                $this->createForm['trabajo']
-            ),
-            'empresa' => trim(
-                $this->createForm['empresa']
-            ),
-            'actividad_empresa' => trim(
-                $this->createForm['actividad_empresa']
-            ),
-            'documentacion' => $this->documentos,
-
-        ]);
-
-        $inquilino = User::where('id', Auth::user()->id)->first();
-        $inquilino->update(
-            [
-                'fase' => 2,
-            ]
-        );
-        return redirect()->route('inquilino.referencias');
     }
 
     public function render()

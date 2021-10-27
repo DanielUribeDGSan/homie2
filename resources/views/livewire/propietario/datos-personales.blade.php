@@ -202,7 +202,7 @@
         </div>
         <div class="form-group row">
             <div class="col-6 mt-5">
-                <button type="submit" class="btn btn-orange-sm loading-btn">Registrar datos</button>
+                <button type="submit" class="btn btn-orange-sm btn-loading">Registrar datos</button>
                 <div class="loading-btn d-none">
                     <x-loading />
                 </div>
@@ -369,10 +369,13 @@
                 return false;
             }
 
+            document.querySelector('.btn-loading').classList.add('d-none');
             document.querySelector('.loading-btn').classList.remove('d-none');
-            document.querySelector('.loading-btn').classList.add('d-none');
 
-            Livewire.emitTo('propietario.datos-personales', 'registrarFormulario');
+            setTimeout(function() {
+                Livewire.emitTo('propietario.datos-personales', 'registrarFormulario');
+            }, 2000);
+
         }
 
         const cantidadMascotas = () => {
@@ -448,5 +451,20 @@
             }
         }
     </script>
+    @push('script')
+        <script>
+            Livewire.on('errorDocumentosPropietario', function() {
+                document.querySelector('.btn-loading').classList.remove('d-none');
+                document.querySelector('.loading-btn').classList.add('d-none');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Espera un momento...',
+                    html: 'Tus documentos aún no se suben, espera 10 segundos mas.',
+                    confirmButtonText: 'Aceptar',
+                });
+                return false;
+            });
+        </script>
+    @endpush
 
 </div>
