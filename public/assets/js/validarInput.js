@@ -49,7 +49,7 @@ const showFile = (id, name) => {
 $(document).on('change', 'input[type="file"]', function () {
 
 
-    if (this.id == 'comprobante_nomina1') {
+    if (this.id == 'comprobante_nomina1' || $this.id == 'comprobante_nomina2' || $this.id == 'comprobante_nomina3' || $this.id == 'comprobante_nomina4') {
         return false;
     }
 
