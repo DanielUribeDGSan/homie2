@@ -153,7 +153,7 @@
     filter: grayscale(100) contrast(0%) brightness(1.8);
 }
 .img-loading-logo {
-    width: 18vw;
+    width: 22vw;
 }
 
 @media (max-width: 991px) {

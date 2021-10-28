@@ -37,18 +37,61 @@ class Roomies extends Component
         'historial_crediticio' => "",
     ];
 
+    public $identificacion_oficial2, $documentos2, $nominas2 = [];
 
-    protected $validationAttributes = [
-        'createForm.compartira_renta' => 'Compartirá renta',
-        'createForm.name' => 'Nombre',
-        'createForm.last_name' => 'Apellidos',
-        'createForm.email' => 'Correo electrónico',
-        'createForm.phone' => 'Teléfono',
-        'createForm.fecha_nacimiento' => 'Fecha de nacimiento',
-        'createForm.rfc' => 'RFC',
-        'createForm.direccion_vivienda' => 'Dirección de la vivienda',
-        'createForm.documentacion' => 'Documentación',
-        'createForm.historial_crediticio' => 'Historial crediticio',
+    public $estado_cuenta_roomie1, $estado_cuenta_roomie2, $estado_cuenta_roomie3;
+
+    public $createForm2 = [
+        'compartira_renta' => "",
+        'cantidad_roomies' => "",
+        'name' => "",
+        'last_name' => "",
+        'identificacion_oficial' => "",
+        'email' => "",
+        'phone' => "",
+        'fecha_nacimiento' => "",
+        'rfc' => "",
+        'direccion_vivienda' => "",
+        'documentacion' => "",
+        'historial_crediticio' => "",
+    ];
+
+    public $identificacion_oficial3, $documentos3, $nominas3 = [];
+
+    public $estado_cuenta_roomie11, $estado_cuenta_roomie22, $estado_cuenta_roomie33;
+
+    public $createForm3 = [
+        'compartira_renta' => "",
+        'cantidad_roomies' => "",
+        'name' => "",
+        'last_name' => "",
+        'identificacion_oficial' => "",
+        'email' => "",
+        'phone' => "",
+        'fecha_nacimiento' => "",
+        'rfc' => "",
+        'direccion_vivienda' => "",
+        'documentacion' => "",
+        'historial_crediticio' => "",
+    ];
+
+    public $identificacion_oficial4, $documentos4, $nominas4 = [];
+
+    public $estado_cuenta_roomie111, $estado_cuenta_roomie222, $estado_cuenta_roomie333;
+
+    public $createForm4 = [
+        'compartira_renta' => "",
+        'cantidad_roomies' => "",
+        'name' => "",
+        'last_name' => "",
+        'identificacion_oficial' => "",
+        'email' => "",
+        'phone' => "",
+        'fecha_nacimiento' => "",
+        'rfc' => "",
+        'direccion_vivienda' => "",
+        'documentacion' => "",
+        'historial_crediticio' => "",
     ];
 
     public function registrarFormulario()
