@@ -31,8 +31,8 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf </form>
                         @else
-                            <a class="btn btn-yellow link_ref ocultar-md" title="registrate"
-                                href="{{ route('registro') }}">Regístrate</a>
+                            <a class="btn btn-yellow link_ref text-white mt-2" title="registrate"
+                                href="{{ route('registro') }}" style="width: 42vw;color:#fff !important">Regístrate</a>
                         @endauth
                     </li>
                 </ul>

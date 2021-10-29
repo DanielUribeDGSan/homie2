@@ -101,7 +101,7 @@
                     <div class="footer-top pt-80 pb-35">
                         <div class="row">
                             <div
-                                class="col-lg-3 col-md-6 col-sm-6 col-12 d-flex align-items-center justify-content-center">
+                                class="col-lg-3 col-md-6 col-sm-6 col-12 d-flex align-items-lg-center justify-content-center">
                                 <div class="footer-widget footer-about mb-40">
                                     <div class="footer-logo">
                                         <a href="index.html"><img

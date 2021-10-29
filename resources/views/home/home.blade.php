@@ -45,7 +45,7 @@
                             <div class="col-lg-11 col-md-10 col-10">
                                 <p class="mt-3 fw-400">
                                     <span class="text-secundary">Promoción de lanzamiento:</span><br />
-                                    Gana el doble de comisión por contrato.
+                                    Te damos el doble de comisión por cada contrato.
                                 </p>
                             </div>
                         </div>
@@ -58,8 +58,9 @@
                             </div>
                             <div class="col-lg-11 col-md-10 col-10">
                                 <p class="mt-3 fw-400">
-                                    Te ofrecemos <span class="text-secundary">Asesoría personalizada</span>,
-                                    y te acompañamos durante el proceso.
+                                    Aseguras la renta de tus clientes y recibes <span class="text-secundary">asesoría
+                                        personalizada</span> durante todo el
+                                    proceso.
                                 </p>
                             </div>
                         </div>
@@ -96,7 +97,7 @@
                                     </defs>
                                 </svg>
                             </span>
-                            <small class="ml-2">Complementa a tus clientes con este producto</small>
+                            <small class="ml-2">Cierra más contratos</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -116,7 +117,7 @@
 
 
                             </span>
-                            <small> Recompensas Homie</small>
+                            <small>Genera un ingreso extra con mínimo esfuerzo</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -136,7 +137,7 @@
 
 
                             </span>
-                            <small>Cierra más contratos</small>
+                            <small>Da más seguridad para tus clientes</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -156,7 +157,7 @@
 
 
                             </span>
-                            <small>Asesoría personalizada</small>
+                            <small>Trabaja con un proceso 100% digital</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -176,12 +177,12 @@
 
 
                             </span>
-                            <small> Proceso 100% digital</small>
+                            <small>Gana recompensas Homie</small>
                         </p>
                         <div
                             class="d-flex align-items-center justify-content-lg-start justify-content-md-center justify-content-center">
-                            <a class="btn btn-yellow-lg mt-5 link_ref" title="contratar"
-                                href="{{ route('registro.broker') }}">Contratar</a>
+                            <a class="btn btn-yellow-lg mt-5 link_ref" title="Registrarme"
+                                href="{{ route('registro.broker') }}">Registrarme</a>
                         </div>
 
                     </div>
@@ -201,10 +202,8 @@
             <article>
                 <h1 class="text-orange text-center">¿Eres Propietario?</h1>
                 <h2 class="text-orange text-center fw-400 mt-3">Protegemos tu Patrimonio</h2>
-                <p class="mt-3 text-center fw-200">Olvídate de procesos engorrosos, con Respaldo
-                    Homie te proteges de
-                    cualquier
-                    incidencia</p>
+                <p class="mt-3 text-center fw-200">Con el Repaldo Homie te olvidas de procesos complicados mientras
+                    proteges tu inmueble y aseguras tu renta.</p>
             </article>
             <div class="row pt-6">
                 <div class="col-lg-3 col-md-6 col-12 mt-lg-0 mt-md-4 mt-4">
@@ -306,17 +305,12 @@
                     <p class="line-form"></p>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="text-primary fw-400 text-lg-left text-center-md mt-lg-0 mt-md-4 mt-4">Tenemos
-                        la
-                        solución para ti.
+                    <h2 class="text-primary fw-400 text-lg-left text-center-md mt-lg-0 mt-md-4 mt-4">Tenemos la solución
+                        que buscabas
                     </h2>
-                    <p class="mt-3 text-lg-left text-center-md mt-lg-4 mt-md-4 mt-4">Conoce nuestros
-                        paquetes,
-                        y descubre lo fácil
-                        que es rentar sin aval, con
-                        un proceso 100% digital
-                        y
-                        con la posibilidad de no pagar deposito</p>
+                    <p class="mt-3 text-lg-left text-center-md mt-lg-4 mt-md-4 mt-4">Descubre lo fácil que es rentar sin
+                        aval. Contamos con cientos de inmuebles, proceso 100% digital, asesoría personalizada y la
+                        posibilidad de no pagar depósito</p>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <img class="img-fluid mt-4" src="{{ asset('assets/images/svg/ilustracion-3.svg') }}"
@@ -353,7 +347,7 @@
                                     </defs>
                                 </svg>
                             </span>
-                            <small class="ml-2">Complementa a tus clientes con este producto</small>
+                            <small class="ml-2">Sin aval</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -373,7 +367,7 @@
 
 
                             </span>
-                            <small> Recompensas Homie</small>
+                            <small>Posibilidad de no pagar depósito</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -393,7 +387,7 @@
 
 
                             </span>
-                            <small>Cierra más contratos</small>
+                            <small>Aplicación fácil y rápida</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -413,7 +407,7 @@
 
 
                             </span>
-                            <small>Asesoría personalizada</small>
+                            <small>Múltiples formas de pago</small>
                         </p>
                         <p class="fw-300 mt-3 text-lg-left text-center-md">
                             <span>
@@ -433,7 +427,7 @@
 
 
                             </span>
-                            <small> Proceso 100% digital</small>
+                            <small>Descuentos con aliados</small>
                         </p>
                         <div
                             class="d-flex align-items-center justify-content-lg-start justify-content-md-center justify-content-center">
