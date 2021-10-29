@@ -35,7 +35,7 @@ class MailInvitacionPropietario extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mail-invitacion-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Homie - Nueva invitación')
-            ->subject('Te han enviado una invitación a homie');
+        return $this->view('mails.mail-invitacion-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Respaldo Homie - Nueva invitación')
+            ->subject('Te enviaron una invitación para Homie');
     }
 }

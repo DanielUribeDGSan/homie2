@@ -393,7 +393,8 @@
                                                                     style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:30px;padding-right:30px">
                                                                     <h2
                                                                         style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:lato, helvetica neue, helvetica, arial, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#111111">
-                                                                        Hola {{ $user->name }}</h2>
+                                                                        Hola {{ $user->name }}
+                                                                        {{ $user->last_name }}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
@@ -473,24 +474,6 @@
                                                                             con mi registro</a></span>
                                                                 </td>
                                                             </tr>
-                                                            {{-- <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" align="left"
-                                                                    style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, helvetica neue, helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        Recuerda que para acceder a tu cuenta, debes de
-                                                                        colocar tu correo y contraseña.</p>
-                                                                </td>
-                                                            </tr>
-                                                            <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, helvetica neue, helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        Correo: {{ $user->email }}<br>Contraseña:
-                                                                        {{ $password }}</p>
-                                                                </td>
-                                                            </tr> --}}
                                                         </table>
                                                     </td>
                                                 </tr>
@@ -526,8 +509,8 @@
                                                                     style="padding:0;Margin:0;padding-top:5px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, helvetica neue, helvetica, arial, sans-serif;line-height:21px;color:#ffffff;font-size:14px">
-                                                                        Si necesitas ayuda o tienes dudas, no dudes en
-                                                                        contactarnos.</p>
+                                                                        Si necesitas ayuda en el proceso, responde este
+                                                                        correo.</p>
                                                                 </td>
                                                             </tr>
                                                         </table>

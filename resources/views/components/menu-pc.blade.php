@@ -46,7 +46,7 @@
                                         @csrf </form>
                                 @else
                                     <a class="btn btn-yellow link_ref ocultar-md" title="registrate"
-                                        href="{{ route('registro') }}">Registrate</a>
+                                        href="{{ route('registro') }}">Regístrate</a>
                                 @endauth
                             </div>
 

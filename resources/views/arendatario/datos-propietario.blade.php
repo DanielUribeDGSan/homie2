@@ -10,11 +10,10 @@
                     <div class="p-3">
                         <h1 class="text-secundary">Datos del propietario</h1>
                         @livewire('arendatario.datos-propietario',['transaccion_user' => $transaccion_user])
-
                         <div class="mt-5">
-                            <h1 class="text-secundary">¿No cuentas con un propietario?</h1>
-                            <a class="mt-3 d-inline-block ft-md" href="https://homie.mx/h/" target="_blank">Consigue uno
-                                aquí</a>
+                            <h1 class="text-secundary">¿Aún no rentas un inmueble?</h1>
+                            <a class="mt-3 d-inline-block ft-md" href="https://homie.mx/h/" target="_blank">Da click
+                                aquí para encontrar opciones sin aval</a>
                         </div>
                     </div>
                 </div>

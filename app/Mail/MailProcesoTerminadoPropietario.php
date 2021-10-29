@@ -34,7 +34,7 @@ class MailProcesoTerminadoPropietario extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mail-proceso-terminado-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Homie - Proceso terminado')
-            ->subject('El propietario que invitaste ha terminado su proceso');
+        return $this->view('mails.mail-proceso-terminado-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Respaldo Homie - Registro completado')
+            ->subject('Tu registro ha sido completado');
     }
 }

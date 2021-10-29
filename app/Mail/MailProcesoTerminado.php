@@ -32,7 +32,7 @@ class MailProcesoTerminado extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mail-proceso-terminado')->from('daniel.uribe.garcia07@gmail.com', 'Homie - Proceso terminado')
-            ->subject('Gracias por haber completado tu registro');
+        return $this->view('mails.mail-proceso-terminado')->from('daniel.uribe.garcia07@gmail.com', 'Respaldo Homie - Registro completado')
+            ->subject('Tu registro ha sido completado');
     }
 }

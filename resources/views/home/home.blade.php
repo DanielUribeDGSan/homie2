@@ -30,8 +30,8 @@
                             </div>
                             <div class="col-lg-11 col-md-10 col-10">
                                 <p class="mt-3 fw-400">
-                                    Gánate <span class="text-secundary">$1,000 pesos</span> por cada
-                                    respaldo homie que tus clientes contraten.
+                                    Gana <span class="text-secundary">$1,000 pesos</span> por cada Respaldo Homie que
+                                    tus clientes contraten.
                                 </p>
                             </div>
                         </div>

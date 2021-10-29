@@ -35,6 +35,11 @@
                 @endif
             </div>
             <div class="col-12 mt-4">
+                <p><small>Avisa a tu propietario que le llamáremos de parte de Homie para
+                        ayudarle a proteger su
+                        inmueble.</small></p>
+            </div>
+            <div class="col-12 mt-3">
                 <hr />
                 <article>
                     <p class="mt-4">Opcional</p>
