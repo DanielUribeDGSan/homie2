@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Homie</title>
+    <title>Respaldo Homie</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description"
         content="Urdan Minimal eCommerce Bootstrap 5 Template is a stunning eCommerce website template that is the best choice for any online store.">

@@ -1,15 +1,9 @@
 <x-layout-web>
     <section class="section">
         <div class="container">
-            <article>
-                <h1 class="text-primary text-center">Cuidamos tu patrimonio</h1>
-            </article>
-            <article>
-                <h1 class="text-secundary text-center mt-5">Aseguramos tu renta</h1>
-            </article>
-            <article>
-                <h1 class="text-orange text-center mt-5">Administramos por tí</h1>
-            </article>
+
+            <h1 class="text-primary text-center">Renta sin necesidad de Aval ni depósito de garantía</h1>
+            <p class="text-center"><small class="text-secundary"> Aplican T&C</small></p>
             <img class="img-fluid mt-lg mt-md-5 mt-5" src="{{ asset('assets/images/svg/ilustracion-1.svg') }}"
                 alt="ilustacion homie" />
         </div>

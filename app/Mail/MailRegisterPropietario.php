@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MailRegister extends Mailable
+class MailRegisterPropietario extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -33,7 +33,7 @@ class MailRegister extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.mail-register')->from('daniel.uribe.garcia07@gmail.com', 'Respaldo Homie - Registro éxitoso')
+        return $this->view('mails.mail-register-propietario')->from('daniel.uribe.garcia07@gmail.com', 'Respaldo Homie - Registro éxitoso')
             ->subject('¡Gracias por registrarte en Homie!');
     }
 }

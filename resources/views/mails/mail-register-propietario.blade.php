@@ -455,8 +455,8 @@
                                                                     style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     <p
                                                                         style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, helvetica neue, helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        Este es el primer paso para obtener más
-                                                                        ganancias y proteger a tus clientes.
+                                                                        Este es el primer paso para proteger tu inmueble
+                                                                        y olvidarte de complicaciones.
                                                                         Recuerda que para acceder a tu cuenta debes
                                                                         escribir tu <strong>correo y
                                                                             contraseña.</strong></p>
