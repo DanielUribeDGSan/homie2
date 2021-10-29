@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->integer('fase')->default(0);
             $table->string('transaction')->nullable();
+            $table->string('referred_id')->unique()->nullable();
+            $table->string('referred_guest')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

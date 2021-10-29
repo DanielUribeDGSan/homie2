@@ -1,4 +1,5 @@
 <div x-data class="mt-3">
+
     <form onsubmit="return registrarFormInquilinoAPropietario(event)">
         <div class="form-group row">
             <div class="col-lg-6 col-md-6 col-12 mt-2">
@@ -98,6 +99,43 @@
             </div>
         </div>
     </form>
+    <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalReferido" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalReferidoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalReferidoLabel">¿Cuentas con un código de invitación?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-lg-12 col-md-12 col-12 mt-2">
+                            <label for="referred_guest" class="col-form-label fw-100">Ingresa tu código</label>
+                            <input type="text" class="form-input" id="referred_guest" onkeyup="onlyLetrasNum(this)"
+                                maxlength="255" wire:model.defer="createFormReferido.referred_guest" autocomplete="off">
+                            @if ($errors->has('createFormReferido.referred_guest'))
+                                <span>{{ $errors->first('createFormReferido.referred_guest') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-12 mt-3">
+                            <button type="button" class="btn btn-orange-sm" data-bs-dismiss="modal">Registrar
+                                código</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow-sm" data-bs-dismiss="modal">No tengo un
+                        código</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const registrarFormInquilinoAPropietario = (e) => {
             e.preventDefault();
@@ -213,4 +251,14 @@
             Livewire.emitTo('broker.datos-personales', 'registrarFormulario');
         }
     </script>
+    @push('script')
+
+        <script>
+            var myModal = new bootstrap.Modal(document.getElementById("modalReferido"), {});
+            document.onreadystatechange = function() {
+                myModal.show();
+            };
+        </script>
+    @endpush
+
 </div>

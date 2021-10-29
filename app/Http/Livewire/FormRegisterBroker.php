@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Mail\MailRegister;
 use App\Models\Guest;
+use App\Models\Referred;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -55,6 +56,8 @@ class FormRegisterBroker extends Component
 
     public function registrarFormulario()
     {
+
+
         $this->validate();
 
         $user = User::create([
@@ -85,18 +88,31 @@ class FormRegisterBroker extends Component
             . mt_rand(1000000, 9999999)
             . $characters[rand(0, strlen($characters) - 1)];
 
+        $randomNumber2 = mt_rand(10, 99)
+            . mt_rand(10, 99)
+            . $characters[rand(0, strlen($characters) - 1)];
+
         $userRegister = User::where('email', $this->createForm['email'])->first();
 
         $transaction = strval($userRegister->id) . str_shuffle(strval($randomNumber));
+        $referido = strval($userRegister->id) . substr($this->createForm['name'], 0, 2) . str_shuffle(strval($randomNumber2)) . substr($this->createForm['last_name'], 0, 2);
 
         $userRegister->update(
             [
                 'transaction' => $transaction,
+                'referred_id' => strtolower($referido)
             ]
         );
         Transaction::create(
             [
                 'transaction' => $transaction,
+                'user_id' => $userRegister->id
+            ]
+        );
+
+        Referred::create(
+            [
+                'referred_id' => strtolower($referido),
                 'user_id' => $userRegister->id
             ]
         );

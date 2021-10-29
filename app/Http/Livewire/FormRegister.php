@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\MailRegister;
+use App\Models\Referred;
 use App\Models\Transaction;
 use App\Models\User;
 use Livewire\Component;
@@ -71,9 +72,15 @@ class FormRegister extends Component
             . mt_rand(1000000, 9999999)
             . $characters[rand(0, strlen($characters) - 1)];
 
+        $randomNumber2 = mt_rand(10, 99)
+            . mt_rand(10, 99)
+            . $characters[rand(0, strlen($characters) - 1)];
+
         $userRegister = User::where('email', $this->createForm['email'])->first();
 
         $transaction = strval($userRegister->id) . str_shuffle(strval($randomNumber));
+        $referido = strval($userRegister->id) . substr($this->createForm['name'], 0, 2) . str_shuffle(strval($randomNumber2)) . substr($this->createForm['last_name'], 0, 2);
+
 
         $userRegister->update(
             [
@@ -88,9 +95,23 @@ class FormRegister extends Component
             ]
         );
 
+
         if ($this->createForm['type'] == '1') {
             $user->assignRole('broker');
             Mail::to($this->createForm['email'])->send(new MailRegister($user, $this->createForm['password']));
+
+            $userRegister->update(
+                [
+                    'referred_id' => strtolower($referido)
+                ]
+            );
+
+            Referred::create(
+                [
+                    'referred_id' => strtolower($referido),
+                    'user_id' => $userRegister->id
+                ]
+            );
 
             Auth::login($user);
             return redirect()->route('broker.datos_propietario_inquilino', $transaction);

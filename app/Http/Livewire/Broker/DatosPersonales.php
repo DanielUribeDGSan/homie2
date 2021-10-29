@@ -18,6 +18,11 @@ class DatosPersonales extends Component
 
     public $transaccion_user;
 
+    public $createFormReferido = [
+        'referred_guest' => "",
+
+    ];
+
     public $createForm = [
         'precio' => "",
         'direccion' => "",
@@ -26,7 +31,6 @@ class DatosPersonales extends Component
         'phone' => "",
         'email' => "",
     ];
-
 
     public $createForm2 = [
         'name' => "",
@@ -117,6 +121,7 @@ class DatosPersonales extends Component
         $inquilino->update(
             [
                 'fase' => 1,
+                'referred_guest' => $this->createFormReferido['referred_guest']
             ]
         );
         Mail::to($this->createForm['email'])->send(new MailInvitacionPropietario($user, $inquilino, $this->createForm['email']));

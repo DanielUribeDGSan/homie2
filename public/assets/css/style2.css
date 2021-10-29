@@ -199,4 +199,34 @@ select {
     background-size: 10% 25%;
 }
 
-/* File */
+/* Modal Broker */
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 0px;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+.btn-close {
+    opacity: 1;
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0px;
+    box-shadow: var(--sombra);
+    border-radius: 0.3rem;
+    outline: 0;
+}

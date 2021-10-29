@@ -209,6 +209,7 @@
 
         <!-- Mobile Menu start -->
         <x-menu-movil />
+
     </div>
     <!-- All JS is here -->
     @livewireScripts
@@ -247,7 +248,6 @@
     <script src="{{ asset('assets/js/scroll.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js?ver=1.0.6') }}"></script>
-
 
     @stack('script')
 
