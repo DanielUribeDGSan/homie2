@@ -22,7 +22,7 @@
                 <label for="cantidad_roomies" class="col-form-label fw-100 ">Cantidad de roomies</label>
                 <select class="form-input" id="cantidad_roomies" wire:model.defer="createForm.cantidad_roomies"
                     onchange="validarCantidadRoomies()">
-                    <option value="" selected disabled>Selecciona una opción</option>
+                    <option value="0" selected disabled>Selecciona una opción</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
