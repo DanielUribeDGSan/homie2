@@ -118,7 +118,7 @@
                         <div class="col-lg-12 col-md-12 col-12 mt-2">
                             <label for="referred_guest" class="col-form-label fw-100">Ingresa tu código</label>
                             <input type="text" class="form-input" id="referred_guest" onkeyup="onlyLetrasNum(this)"
-                                maxlength="10" wire:model.defer="createFormReferido.referred_guest" autocomplete="off">
+                                maxlength="255" wire:model.defer="createFormReferido.referred_guest" autocomplete="off">
                             @if ($errors->has('createFormReferido.referred_guest'))
                                 <span>{{ $errors->first('createFormReferido.referred_guest') }}</span>
                             @endif
