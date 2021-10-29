@@ -112,13 +112,12 @@
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12 d-flex justify-content-center">
                                 <div class="w-auto footer-widget footer-widget-margin-1 footer-list mb-40">
-                                    <a class="text-white link_ref" href="{{ route('home') . '#broker' }}">Broker</a>
+                                    <a class="text-white" href="{{ route('home') . '#broker' }}">Broker</a>
                                     <div class="footer__espacio-text"></div>
-                                    <a class="text-white link_ref"
+                                    <a class="text-white"
                                         href="{{ route('home') . '#propietario' }}">Propietario</a>
                                     <div class="footer__espacio-text"></div>
-                                    <a class="text-white link_ref"
-                                        href="{{ route('home') . '#inquilino' }}">Inquilino</a>
+                                    <a class="text-white" href="{{ route('home') . '#inquilino' }}">Inquilino</a>
                                     <div class="footer__espacio-text"></div>
                                     <a class="text-white link_ref">FAQs</a>
                                     <div class="footer__espacio-text"></div>
