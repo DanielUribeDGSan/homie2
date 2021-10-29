@@ -289,4 +289,9 @@ class WebController extends Controller
         }
         return view('avisos.registro-completado');
     }
+
+    public function invitar_brokers()
+    {
+        return view('avisos.invitar-brokers');
+    }
 }

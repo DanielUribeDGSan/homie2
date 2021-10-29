@@ -36,7 +36,7 @@ class FormRegisterBroker extends Component
         'createForm.name' => 'Nombre',
         'createForm.last_name' => 'Apellidos',
         'createForm.phone' => 'Teléfono',
-        'createForm.email' => 'Email',
+        'createForm.email' => 'E-mail',
         'createForm.password' => 'Contraseña',
     ];
 

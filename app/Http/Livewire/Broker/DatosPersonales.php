@@ -6,6 +6,7 @@ use App\Mail\MailInvitacionInquilino;
 use App\Mail\MailInvitacionPropietario;
 use App\Mail\MailProcesoTerminado;
 use App\Models\Guest;
+use App\Models\Referred;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,7 @@ class DatosPersonales extends Component
 {
     protected $listeners = ['registrarFormulario'];
 
-    public $transaccion_user;
+    public $transaccion_user, $codeRefered;
 
     public $createFormReferido = [
         'referred_guest' => "",
@@ -65,6 +66,18 @@ class DatosPersonales extends Component
         'createForm2.phone' => 'Teléfono',
         'createForm2.email' => 'Email',
     ];
+
+    public function validarCodigo()
+    {
+
+        $code = Referred::where('referred_id', $this->createFormReferido['referred_guest'])->first();
+        if (!is_null($code)) {
+            $this->codeRefered = $this->createFormReferido['referred_guest'];
+            $this->emit('successCode');
+        } else {
+            $this->emit('errorCode');
+        }
+    }
 
     public function registrarFormulario()
     {
@@ -121,7 +134,7 @@ class DatosPersonales extends Component
         $inquilino->update(
             [
                 'fase' => 1,
-                'referred_guest' => $this->createFormReferido['referred_guest']
+                'referred_guest' => $this->codeRefered
             ]
         );
         Mail::to($this->createForm['email'])->send(new MailInvitacionPropietario($user, $inquilino, $this->createForm['email']));
@@ -130,7 +143,7 @@ class DatosPersonales extends Component
 
         Mail::to(Auth::user()->email)->send(new MailProcesoTerminado($inquilino));
 
-        return redirect()->route('registro_completado');
+        return redirect()->route('invitar_brokers');
     }
 
     public function render()

@@ -8,7 +8,13 @@
             <div class="col-lg-8">
                 <div class="container">
                     <div class="p-3">
-                        <h1 class="text-secundary">Datos del propietario</h1>
+                        @if (!Auth::user()->referred_guest)
+                            <a type="button" class="btn-code" data-bs-toggle="modal"
+                                data-bs-target="#modalReferido">
+                                ¿Tienes un código de invitación?
+                            </a>
+                        @endif
+                        <h1 class="text-secundary mt-3">Datos del propietario</h1>
                         @livewire('broker.datos-personales',['transaccion_user' => $transaccion_user])
                     </div>
                 </div>

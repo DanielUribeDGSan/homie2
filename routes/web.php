@@ -24,6 +24,7 @@ Route::get('/registro-inquilino/{transaccion?}/{email?}', [App\Http\Controllers\
 Route::get('/registro-propietario/{transaccion?}/{email?}', [App\Http\Controllers\WebController::class, 'registro_propietario'])->name('registro.propietario');
 Route::get('/iniciar-sesion', [App\Http\Controllers\WebController::class, 'iniciar_sesion'])->name('iniciar_sesion');
 Route::get('/registro-completado', [App\Http\Controllers\WebController::class, 'registro_completado'])->name('registro_completado');
+Route::get('/invitar-brokers', [App\Http\Controllers\WebController::class, 'invitar_brokers'])->name('invitar_brokers');
 
 
 // Inquilino
