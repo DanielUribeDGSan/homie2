@@ -118,7 +118,7 @@
                     <span>{{ $errors->first('createForm.documentacion') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Primer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta1"
                     wire:model.defer="estado_cuenta1">
@@ -131,7 +131,7 @@
                     <span>{{ $errors->first('estado_cuenta1') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Segundo estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta2"
                     wire:model.defer="estado_cuenta2">
@@ -144,7 +144,7 @@
                     <span>{{ $errors->first('estado_cuenta2') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Tercer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta3"
                     wire:model.defer="estado_cuenta3">
@@ -157,7 +157,7 @@
                     <span>{{ $errors->first('estado_cuenta3') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina ocultar-roomie">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Selecciona tus 6 archivos de nomina, de tus ultimos 3 meses</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_nomina1"
                     name="nominas[]" wire:model.defer="nominas" multiple onchange="validarCantidadFiles()">
@@ -281,7 +281,7 @@
                     <span>{{ $errors->first('createForm2.documentacion') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Primer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie1"
                     wire:model.defer="estado_cuenta_roomie1">
@@ -294,7 +294,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie1') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Segundo estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie2"
                     wire:model.defer="estado_cuenta_roomie2">
@@ -307,7 +307,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie2') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta2 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Tercer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie3"
                     wire:model.defer="estado_cuenta_roomie3">
@@ -320,7 +320,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie3') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina2 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina2 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Selecciona tus 6 archivos de nomina, de tus ultimos 3
                     meses</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_nomina2"
@@ -445,7 +445,7 @@
                     <span>{{ $errors->first('createForm3.documentacion') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Primer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie11"
                     wire:model.defer="estado_cuenta_roomie11">
@@ -458,7 +458,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie11') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Segundo estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie22"
                     wire:model.defer="estado_cuenta_roomie22">
@@ -471,7 +471,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie22') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta3 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Tercer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie33"
                     wire:model.defer="estado_cuenta_roomie33">
@@ -484,7 +484,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie33') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina3 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina3 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Selecciona tus 6 archivos de nomina, de tus ultimos 3
                     meses</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_nomina3"
@@ -609,7 +609,7 @@
                     <span>{{ $errors->first('createForm4.documentacion') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Primer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie111"
                     wire:model.defer="estado_cuenta_roomie111">
@@ -622,7 +622,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie111') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Segundo estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie222"
                     wire:model.defer="estado_cuenta_roomie222">
@@ -635,7 +635,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie222') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 estados-cuenta4 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Tercer estado de cuenta</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="estado_cuenta_roomie333"
                     wire:model.defer="estado_cuenta_roomie333">
@@ -648,7 +648,7 @@
                     <span>{{ $errors->first('estado_cuenta_roomie333') }}</span>
                 @endif
             </div>
-            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina4 ocultar-roomie ">
+            <div class="col-lg-6 col-md-6 col-12 mt-3 comprobante-nomina4 ocultar-roomie d-none">
                 <label class="col-form-label fw-100">Selecciona tus 6 archivos de nomina, de tus ultimos 3
                     meses</label>
                 <input type="file" accept="image/*,.pdf" class="form-file" id="comprobante_nomina4"
@@ -781,636 +781,643 @@
                     confirmButtonText: 'Aceptar',
                 });
                 return false;
-            } else if (cantidad_roomies == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (name == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (last_name == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (identificacion_oficial == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (email == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Email</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!validar_email(email) && compartira_renta1) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    text: 'Tu email no es valido, escribelo correctamente',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone.length < 10 && compartira_renta1 || phone.length > 20 && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El número no es valido',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (fecha_nacimiento == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (rfc == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>RFC</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (direccion_vivienda == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion == '' && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' && !
-                comprobante_nomina1 && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
-                estado_cuenta1 ||
-                documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
-                estado_cuenta2 || documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
-                estado_cuenta3) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!historial_crediticio && !historial_crediticio2 && compartira_renta1) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            }
-            // Validar roomie1 ___________________________________________
-            else if (name2 == '' && cantidad_roomies == '1' || name2 == '' && cantidad_roomies == '2' || name2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (last_name2 == '' && cantidad_roomies == '1' || last_name2 == '' && cantidad_roomies == '2' ||
-                last_name2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (identificacion_oficial2 == '' && cantidad_roomies == '1' || identificacion_oficial2 == '' &&
-                cantidad_roomies == '2' ||
-                identificacion_oficial2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (email2 == '' && cantidad_roomies == '1' || email2 == '' &&
-                cantidad_roomies == '2' ||
-                email2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Email</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!validar_email(email2) == '' && cantidad_roomies == '1' || !validar_email(email2) == '' &&
-                cantidad_roomies == '2' ||
-                !validar_email(email2) == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    text: 'Tu email no es valido, escribelo correctamente',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone2 == '' && cantidad_roomies == '1' || phone2 == '' &&
-                cantidad_roomies == '2' ||
-                phone2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone2.length < 10 && cantidad_roomies == '1' || phone2.length < 10 &&
-                cantidad_roomies == '2' ||
-                phone2.length < 10 &&
-                cantidad_roomies == '3' || phone2.length > 20 && cantidad_roomies == '1' || phone2.length > 20 &&
-                cantidad_roomies == '2' ||
-                phone2.length > 20 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El número no es valido',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (fecha_nacimiento2 == '' && cantidad_roomies == '1' || fecha_nacimiento2 == '' &&
-                cantidad_roomies == '2' ||
-                fecha_nacimiento2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (rfc2 == '' && cantidad_roomies == '1' || rfc2 == '' &&
-                cantidad_roomies == '2' ||
-                rfc2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>RFC</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (direccion_vivienda2 == '' && cantidad_roomies == '1' || direccion_vivienda2 == '' &&
-                cantidad_roomies == '2' ||
-                direccion_vivienda2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion2 == '' && cantidad_roomies == '1' || documentacion2 == '' &&
-                cantidad_roomies == '2' ||
-                documentacion2 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion2 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' && cantidad_roomies ==
-                '1' && !comprobante_nomina2 || documentacion2 ==
-                'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
-                cantidad_roomies == '2' && !comprobante_nomina2 ||
-                documentacion2 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
-                cantidad_roomies == '3' && !comprobante_nomina2) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '1' && !
-                estado_cuenta_roomie1 ||
-                documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '1' && !
-                estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '1' && !
-                estado_cuenta_roomie3 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie1 ||
-                documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie3 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie1 ||
-                documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie3) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!historial_crediticio11 && !historial_crediticio22 && cantidad_roomies == '1' || !
-                historial_crediticio11 && !historial_crediticio22 &&
-                cantidad_roomies == '2' ||
-                !historial_crediticio11 && !historial_crediticio22 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            }
-            // Validar roomie2 ___________________________________________
-            else if (name3 == '' && cantidad_roomies == '2' || name3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (last_name3 == '' && cantidad_roomies == '2' ||
-                last_name3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (identificacion_oficial3 == '' &&
-                cantidad_roomies == '2' ||
-                identificacion_oficial3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (email3 == '' &&
-                cantidad_roomies == '2' ||
-                email3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Email</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!validar_email(email3) == '' &&
-                cantidad_roomies == '2' ||
-                !validar_email(email3) == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    text: 'Tu email no es valido, escribelo correctamente',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone3 == '' &&
-                cantidad_roomies == '2' ||
-                phone3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone3.length < 10 &&
-                cantidad_roomies == '2' ||
-                phone3.length < 10 &&
-                cantidad_roomies == '3' || phone3.length > 20 &&
-                cantidad_roomies == '2' ||
-                phone3.length > 20 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El número no es valido',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (fecha_nacimiento3 == '' &&
-                cantidad_roomies == '2' ||
-                fecha_nacimiento3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (rfc3 == '' &&
-                cantidad_roomies == '2' ||
-                rfc3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>RFC</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (direccion_vivienda3 == '' &&
-                cantidad_roomies == '2' ||
-                direccion_vivienda3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion3 == '' &&
-                cantidad_roomies == '2' ||
-                documentacion3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion3 == '' &&
-                cantidad_roomies == '2' ||
-                documentacion3 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion3 ==
-                'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
-                cantidad_roomies == '2' && !comprobante_nomina3 ||
-                documentacion3 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
-                cantidad_roomies == '3' && !comprobante_nomina3) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion3 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie11 ||
-                documentacion3 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie22 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '2' && !
-                estado_cuenta_roomie33 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie11 ||
-                documentacion3 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie22 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie33) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!
-                historial_crediticio111 && !historial_crediticio222 &&
-                cantidad_roomies == '2' ||
-                !historial_crediticio111 && !historial_crediticio222 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            }
-            // Validar roomie3 ___________________________________________
-            else if (name4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (last_name4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (identificacion_oficial4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (email4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Email</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!validar_email(email4) == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ups...',
-                    text: 'Tu email no es valido, escribelo correctamente',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (phone4.length < 10 &&
-                cantidad_roomies == '3' || phone4.length > 20 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El número no es valido',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (fecha_nacimiento4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (rfc4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>RFC</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (direccion_vivienda4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion4 == '' &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion4 == documentacion4 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
-                cantidad_roomies == '3' && !comprobante_nomina4) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (documentacion4 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie111 ||
-                documentacion4 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie222 || documentacion4 == 'Estados de cuenta completos (3 meses)' &&
-                cantidad_roomies ==
-                '3' && !
-                estado_cuenta_roomie333) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
-            } else if (!historial_crediticio1111 && !historial_crediticio2222 &&
-                cantidad_roomies == '3') {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Ups...',
-                    html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
-                    confirmButtonText: 'Aceptar',
-                });
-                return false;
             }
 
+            if (compartira_renta1) {
+
+                if (cantidad_roomies == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Cantidad_roomies</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (name == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (last_name == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (identificacion_oficial == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (email == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Email</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!validar_email(email) && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Tu email no es valido, escribelo correctamente',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone.length < 10 && compartira_renta1 || phone.length > 20 && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El número no es valido',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (fecha_nacimiento == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (rfc == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>RFC</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (direccion_vivienda == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion == '' && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' && !
+                    comprobante_nomina1 && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
+                    estado_cuenta1 ||
+                    documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
+                    estado_cuenta2 || documentacion == 'Estados de cuenta completos (3 meses)' && compartira_renta1 && !
+                    estado_cuenta3) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!historial_crediticio && !historial_crediticio2 && compartira_renta1) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                }
+                // Validar roomie1 ___________________________________________
+                else if (name2 == '' && cantidad_roomies == '1' || name2 == '' && cantidad_roomies == '2' || name2 ==
+                    '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (last_name2 == '' && cantidad_roomies == '1' || last_name2 == '' && cantidad_roomies == '2' ||
+                    last_name2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (identificacion_oficial2 == '' && cantidad_roomies == '1' || identificacion_oficial2 == '' &&
+                    cantidad_roomies == '2' ||
+                    identificacion_oficial2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (email2 == '' && cantidad_roomies == '1' || email2 == '' &&
+                    cantidad_roomies == '2' ||
+                    email2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Email</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!validar_email(email2) == '' && cantidad_roomies == '1' || !validar_email(email2) == '' &&
+                    cantidad_roomies == '2' ||
+                    !validar_email(email2) == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Tu email no es valido, escribelo correctamente',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone2 == '' && cantidad_roomies == '1' || phone2 == '' &&
+                    cantidad_roomies == '2' ||
+                    phone2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone2.length < 10 && cantidad_roomies == '1' || phone2.length < 10 &&
+                    cantidad_roomies == '2' ||
+                    phone2.length < 10 &&
+                    cantidad_roomies == '3' || phone2.length > 20 && cantidad_roomies == '1' || phone2.length > 20 &&
+                    cantidad_roomies == '2' ||
+                    phone2.length > 20 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El número no es valido',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (fecha_nacimiento2 == '' && cantidad_roomies == '1' || fecha_nacimiento2 == '' &&
+                    cantidad_roomies == '2' ||
+                    fecha_nacimiento2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (rfc2 == '' && cantidad_roomies == '1' || rfc2 == '' &&
+                    cantidad_roomies == '2' ||
+                    rfc2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>RFC</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (direccion_vivienda2 == '' && cantidad_roomies == '1' || direccion_vivienda2 == '' &&
+                    cantidad_roomies == '2' ||
+                    direccion_vivienda2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion2 == '' && cantidad_roomies == '1' || documentacion2 == '' &&
+                    cantidad_roomies == '2' ||
+                    documentacion2 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion2 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies ==
+                    '1' && !comprobante_nomina2 || documentacion2 ==
+                    'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies == '2' && !comprobante_nomina2 ||
+                    documentacion2 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies == '3' && !comprobante_nomina2) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '1' && !
+                    estado_cuenta_roomie1 ||
+                    documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '1' && !
+                    estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '1' && !
+                    estado_cuenta_roomie3 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie1 ||
+                    documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie3 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie1 ||
+                    documentacion2 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie2 || documentacion2 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie3) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!historial_crediticio11 && !historial_crediticio22 && cantidad_roomies == '1' || !
+                    historial_crediticio11 && !historial_crediticio22 &&
+                    cantidad_roomies == '2' ||
+                    !historial_crediticio11 && !historial_crediticio22 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                }
+                // Validar roomie2 ___________________________________________
+                else if (name3 == '' && cantidad_roomies == '2' || name3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (last_name3 == '' && cantidad_roomies == '2' ||
+                    last_name3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (identificacion_oficial3 == '' &&
+                    cantidad_roomies == '2' ||
+                    identificacion_oficial3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (email3 == '' &&
+                    cantidad_roomies == '2' ||
+                    email3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Email</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!validar_email(email3) == '' &&
+                    cantidad_roomies == '2' ||
+                    !validar_email(email3) == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Tu email no es valido, escribelo correctamente',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone3 == '' &&
+                    cantidad_roomies == '2' ||
+                    phone3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone3.length < 10 &&
+                    cantidad_roomies == '2' ||
+                    phone3.length < 10 &&
+                    cantidad_roomies == '3' || phone3.length > 20 &&
+                    cantidad_roomies == '2' ||
+                    phone3.length > 20 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El número no es valido',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (fecha_nacimiento3 == '' &&
+                    cantidad_roomies == '2' ||
+                    fecha_nacimiento3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (rfc3 == '' &&
+                    cantidad_roomies == '2' ||
+                    rfc3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>RFC</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (direccion_vivienda3 == '' &&
+                    cantidad_roomies == '2' ||
+                    direccion_vivienda3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion3 == '' &&
+                    cantidad_roomies == '2' ||
+                    documentacion3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion3 == '' &&
+                    cantidad_roomies == '2' ||
+                    documentacion3 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion3 ==
+                    'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies == '2' && !comprobante_nomina3 ||
+                    documentacion3 == 'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies == '3' && !comprobante_nomina3) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion3 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie11 ||
+                    documentacion3 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie22 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '2' && !
+                    estado_cuenta_roomie33 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie11 ||
+                    documentacion3 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie22 || documentacion3 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie33) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!
+                    historial_crediticio111 && !historial_crediticio222 &&
+                    cantidad_roomies == '2' ||
+                    !historial_crediticio111 && !historial_crediticio222 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                }
+                // Validar roomie3 ___________________________________________
+                else if (name4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Nombre</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (last_name4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Apellidos</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (identificacion_oficial4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Identificación oficial</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (email4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Email</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!validar_email(email4) == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Tu email no es valido, escribelo correctamente',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Teléfono</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (phone4.length < 10 &&
+                    cantidad_roomies == '3' || phone4.length > 20 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El número no es valido',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (fecha_nacimiento4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Fecha de nacimiento</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (rfc4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>RFC</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (direccion_vivienda4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Direccion vivienda actual</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion4 == '' &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Documentación</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion4 == documentacion4 ==
+                    'Comprobantes de nómina timbrados SAT (3 últimos meses)' &&
+                    cantidad_roomies == '3' && !comprobante_nomina4) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Comprobantes de nómina</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (documentacion4 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie111 ||
+                    documentacion4 == 'Estados de cuenta completos (3 meses)' && cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie222 || documentacion4 == 'Estados de cuenta completos (3 meses)' &&
+                    cantidad_roomies ==
+                    '3' && !
+                    estado_cuenta_roomie333) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'Los campos "<b>Estados de cuenta</b>" no pueden quedar vacíos',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                } else if (!historial_crediticio1111 && !historial_crediticio2222 &&
+                    cantidad_roomies == '3') {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Ups...',
+                        html: 'El campo "<b>Historial crediticio</b>" no puede quedar vacío',
+                        confirmButtonText: 'Aceptar',
+                    });
+                    return false;
+                }
+            }
             document.querySelector('.btn-loading').classList.add('d-none');
             document.querySelector('.loading-btn').classList.remove('d-none');
 
@@ -1865,15 +1872,16 @@
             const compartira_renta2 = document.querySelector('#compartira_renta2').checked;
 
             if (compartira_renta1) {
-                const roomies = document.getElementsByClassName(" ocultar-roomie");
+                const roomies = document.getElementsByClassName("ocultar-roomie");
                 for (let i = 0; i < roomies.length; i++) {
                     roomies[i].classList.remove('d-none');
                 }
             } else if (compartira_renta2) {
-                const roomies = document.getElementsByClassName(" ocultar-roomie");
+                const roomies = document.getElementsByClassName("ocultar-roomie");
                 for (let i = 0; i < roomies.length; i++) {
                     roomies[i].classList.add('d-none');
                 }
+
             }
 
         }

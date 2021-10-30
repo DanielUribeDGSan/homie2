@@ -182,7 +182,7 @@
                         <div
                             class="d-flex align-items-center justify-content-lg-start justify-content-md-center justify-content-center">
                             <a class="btn btn-yellow-lg mt-5 link_ref" title="Registrarme"
-                                href="{{ route('registro.broker') }}">Registrarme</a>
+                                href="{{ route('registro.broker') }}">Contratar</a>
                         </div>
 
                     </div>

@@ -16,7 +16,7 @@ class Roomies extends Component
 {
     use WithFileUploads;
 
-    protected $listeners = ['registrarFormulario'];
+    protected $listeners = ['registrarFormulario', 'resetCantidad'];
 
     public $identificacion_oficial, $documentos, $nominas = [];
 
@@ -87,6 +87,12 @@ class Roomies extends Component
         'documentacion' => "",
         'historial_crediticio' => "",
     ];
+
+
+    public function resetCantidad()
+    {
+        $this->createForm['cantidad_roomies'] = '0';
+    }
 
     public function registrarFormulario()
     {
